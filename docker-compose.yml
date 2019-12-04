@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  db:
+    image: mariadb:5.5
+    volumes:
+      # If I want to manage volumes manually for 'rapidminer_data' in a directory of my choosing, be sure
+      # to setup docker shared drives on windows with a 'docker' local admin user.
+      # $ docker volume create -d local -o type=none -o o=bind -o device=/c/temp/rapidminer_data rapidminer_data
+      #
+      # or do this instead to let docker manage the volume
+      # $ docker volume create rapidminer_data
+      - rapidminer_data:/var/lib/mysql
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: rapidminer
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: mysqldb_password
+
+volumes:
+  rapidminer_data:
+    external: true
