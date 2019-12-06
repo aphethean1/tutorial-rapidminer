@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.5.001">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.5.001" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="radoop:radoop_nest" compatibility="9.5.000" expanded="true" height="82" name="Radoop Nest" width="90" x="179" y="34">
+        <parameter key="connection" value="Connection 3"/>
+        <parameter key="table prefix" value="Radoop_"/>
+        <parameter key="change_sample_size" value="false"/>
+        <parameter key="sample_size" value="200000"/>
+        <parameter key="hive_file_format" value="Default Format"/>
+        <parameter key="impala_file_format" value="Default format"/>
+        <parameter key="reload_impala_metadata" value="false"/>
+        <enumeration key="tables_to_reload"/>
+        <parameter key="cleaning" value="true"/>
+        <parameter key="auto_convert" value="true"/>
+        <process expanded="true">
+          <operator activated="true" class="radoop:data_generator" compatibility="9.5.000" expanded="true" height="68" name="Generate Data" width="90" x="246" y="85">
+            <parameter key="file_format" value="TEXTFILE"/>
+            <parameter key="target_function" value="total"/>
+            <parameter key="number_examples" value="1000000"/>
+            <parameter key="number_of_attributes" value="5"/>
+            <parameter key="attributes_lower_bound" value="-10.0"/>
+            <parameter key="attributes_upper_bound" value="10.0"/>
+            <parameter key="number_of_partitions" value="0"/>
+          </operator>
+          <connect from_op="Generate Data" from_port="example set output" to_port="output 1"/>
+          <portSpacing port="source_input 1" spacing="0"/>
+          <portSpacing port="sink_output 1" spacing="0"/>
+          <portSpacing port="sink_output 2" spacing="0"/>
+        </process>
+      </operator>
+      <connect from_op="Radoop Nest" from_port="output 1" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+    </process>
+  </operator>
+</process>

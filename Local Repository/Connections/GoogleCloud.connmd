@@ -1,0 +1,43 @@
+{
+  "name" : "GoogleCloud",
+  "type" : "cloud_connectivity:google-cloud-storage",
+  "description" : "",
+  "tags" : [ ],
+  "id" : "cd1efc45-22fa-41e1-af28-004ce3ae0ad4",
+  "valueProviders" : [ ],
+  "keys" : [ {
+    "group" : "basic",
+    "parameters" : [ {
+      "name" : "use_service_account",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "false",
+      "injectorName" : null
+    }, {
+      "name" : "private_key_file_content",
+      "encrypted" : true,
+      "enabled" : false,
+      "value" : null,
+      "injectorName" : null
+    }, {
+      "name" : "access_token",
+      "encrypted" : true,
+      "enabled" : true,
+      "value" : "5MO31qk1ZFZTJKhZHWTX7TGcD3cOUQAaTgj9LV3w0RU4Qc/NYa4lAsGfU6EYurAWKMKHj2kQUbVnavzxFI1DpcXQ5HdmRWUiONH9fdhxpaV04DZS9K/l8wPfg4GjSiwmQ73NE0n9aQqKHr4h680tZcjgN3nld2krr3AxHXCs2tdu/+v+juTjDxEpBh/Jo8JwgKoh9EVkWow2j+RIf8j5My2mpfkvBv2PDk0yg+HTjAqEeKxcymGarNra3bv1pl2YGUl97V5zCzQ3lc3UMmEgFdiZs/6+TlzdZ3l4TzjhBYqnHSdm4FAmuSG/KxDxclpGoWN5Cp1Yx0E=",
+      "injectorName" : null
+    }, {
+      "name" : "project_id",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "RapidMinerProject",
+      "injectorName" : null
+    }, {
+      "name" : "access_scopes",
+      "encrypted" : false,
+      "enabled" : false,
+      "value" : "S",
+      "injectorName" : null
+    } ]
+  } ],
+  "placeholders" : [ ]
+}

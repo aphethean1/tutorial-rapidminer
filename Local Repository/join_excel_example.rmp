@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<process version="5.3.013">
+
+ <context>
+
+   <input/>
+
+   <output/>
+
+   <macros/>
+
+ </context>
+
+ <operator activated="true" class="process" compatibility="5.3.013" expanded="true" name="Process">
+
+   <process expanded="true">
+
+     <operator activated="true" class="loop_parameters" compatibility="5.3.013" expanded="true" height="76" name="Loop Parameters" width="90" x="112" y="120">
+
+       <list key="parameters">
+
+         <parameter key="Read Excel.sheet_number" value="[1;3;3;linear]"/>
+
+       </list>
+
+       <parameter key="synchronize" value="true"/>
+
+       <parameter key="parallelize_subprocess" value="true"/>
+
+       <process expanded="true">
+
+         <operator activated="true" class="read_excel" compatibility="5.3.013" expanded="true" height="60" name="Read Excel" width="90" x="112" y="120">
+
+           <parameter key="excel_file" value="C:\Temp\Sales Data.xlsx"/>
+
+           <parameter key="sheet_number" value="3"/>
+
+           <parameter key="imported_cell_range" value="A1:B5"/>
+
+           <parameter key="first_row_as_names" value="false"/>
+
+           <list key="annotations">
+
+             <parameter key="0" value="Name"/>
+
+           </list>
+
+           <list key="data_set_meta_data_information">
+
+             <parameter key="0" value="Division.true.integer.attribute"/>
+
+             <parameter key="1" value="Sales.true.integer.attribute"/>
+
+           </list>
+
+         </operator>
+
+         <connect from_op="Read Excel" from_port="output" to_port="result 1"/>
+
+         <portSpacing port="source_input 1" spacing="0"/>
+
+         <portSpacing port="sink_performance" spacing="0"/>
+
+         <portSpacing port="sink_result 1" spacing="0"/>
+
+         <portSpacing port="sink_result 2" spacing="0"/>
+
+       </process>
+
+     </operator>
+
+     <operator activated="true" class="append" compatibility="5.3.013" expanded="true" height="76" name="Append" width="90" x="246" y="120"/>
+
+     <connect from_op="Loop Parameters" from_port="result 1" to_op="Append" to_port="example set 1"/>
+
+     <connect from_op="Append" from_port="merged set" to_port="result 1"/>
+
+     <portSpacing port="source_input 1" spacing="0"/>
+
+     <portSpacing port="sink_result 1" spacing="0"/>
+
+     <portSpacing port="sink_result 2" spacing="0"/>
+
+   </process>
+
+ </operator>
+
+</process>

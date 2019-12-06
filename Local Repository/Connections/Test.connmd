@@ -1,0 +1,43 @@
+{
+  "name" : "Test",
+  "type" : "cloud_connectivity:google-cloud-storage",
+  "description" : "",
+  "tags" : [ ],
+  "id" : "4a40c54e-ac34-4553-ad27-10912f44768f",
+  "valueProviders" : [ ],
+  "keys" : [ {
+    "group" : "basic",
+    "parameters" : [ {
+      "name" : "use_service_account",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "false",
+      "injectorName" : null
+    }, {
+      "name" : "private_key_file_content",
+      "encrypted" : true,
+      "enabled" : true,
+      "value" : null,
+      "injectorName" : null
+    }, {
+      "name" : "access_token",
+      "encrypted" : true,
+      "enabled" : true,
+      "value" : null,
+      "injectorName" : null
+    }, {
+      "name" : "project_id",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : null,
+      "injectorName" : null
+    }, {
+      "name" : "access_scopes",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "S",
+      "injectorName" : null
+    } ]
+  } ],
+  "placeholders" : [ ]
+}

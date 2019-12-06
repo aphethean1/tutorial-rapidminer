@@ -1,0 +1,88 @@
+{
+  "name" : "monitoring_db",
+  "type" : "jdbc_connectors:jdbc",
+  "description" : "",
+  "tags" : [ ],
+  "id" : "d9a69e11-81db-4ef9-ab23-bb049ae73a45",
+  "valueProviders" : [ ],
+  "keys" : [ {
+    "group" : "jdbc_driver",
+    "parameters" : [ {
+      "name" : "urlprefix",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "jdbc:mysql://",
+      "injectorName" : null
+    }, {
+      "name" : "dbseparator",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "/",
+      "injectorName" : null
+    }, {
+      "name" : "driver_class",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "org.mariadb.jdbc.Driver",
+      "injectorName" : null
+    } ]
+  }, {
+    "group" : "db_config",
+    "parameters" : [ {
+      "name" : "host",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "localhost",
+      "injectorName" : null
+    }, {
+      "name" : "port",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "3306",
+      "injectorName" : null
+    }, {
+      "name" : "database",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "rapidminer",
+      "injectorName" : null
+    }, {
+      "name" : "URL",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "%{jdbc_driver.urlprefix}%{host}:%{port}%{jdbc_driver.dbseparator}%{database}",
+      "injectorName" : null
+    }, {
+      "name" : "manual_url",
+      "encrypted" : false,
+      "enabled" : false,
+      "value" : null,
+      "injectorName" : null
+    } ]
+  }, {
+    "group" : "credentials",
+    "parameters" : [ {
+      "name" : "user",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "admin",
+      "injectorName" : null
+    }, {
+      "name" : "password",
+      "encrypted" : true,
+      "enabled" : true,
+      "value" : "0bloDaQGXtvMewZ/7+Igutgj3IRHjJmD",
+      "injectorName" : null
+    } ]
+  }, {
+    "group" : "jdbc_advanced",
+    "parameters" : [ {
+      "name" : "autocommit",
+      "encrypted" : false,
+      "enabled" : true,
+      "value" : "true",
+      "injectorName" : null
+    } ]
+  } ],
+  "placeholders" : [ ]
+}

@@ -1,0 +1,2103 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.5.001">
+  <context>
+    <input/>
+    <output/>
+    <macros>
+      <macro>
+        <key>id</key>
+        <value/>
+      </macro>
+      <macro>
+        <key>actual</key>
+        <value/>
+      </macro>
+      <macro>
+        <key>model_state</key>
+        <value>ACTIVE</value>
+      </macro>
+      <macro>
+        <key>cancelled</key>
+        <value>0.0022359752445597924</value>
+      </macro>
+      <macro>
+        <key>distancegc</key>
+        <value>1082.4757177850004</value>
+      </macro>
+      <macro>
+        <key>flightnumber</key>
+        <value>4225.152297243308</value>
+      </macro>
+      <macro>
+        <key>opflightnumber</key>
+        <value>1922.2742871149603</value>
+      </macro>
+      <macro>
+        <key>regflightnumber</key>
+        <value>4436.296424090338</value>
+      </macro>
+      <macro>
+        <key>aircrafttype</key>
+        <value>320</value>
+      </macro>
+      <macro>
+        <key>airlinecode</key>
+        <value>AF</value>
+      </macro>
+      <macro>
+        <key>altarrapt</key>
+        <value>?</value>
+      </macro>
+      <macro>
+        <key>altdepapt</key>
+        <value>?</value>
+      </macro>
+      <macro>
+        <key>arrcountrycode</key>
+        <value>DE</value>
+      </macro>
+      <macro>
+        <key>depcountrycode</key>
+        <value>DE</value>
+      </macro>
+      <macro>
+        <key>diversionstatus</key>
+        <value>D</value>
+      </macro>
+      <macro>
+        <key>flightid</key>
+        <value>UX1322DKRMAD1401010030</value>
+      </macro>
+      <macro>
+        <key>inairaccuracy</key>
+        <value>A</value>
+      </macro>
+      <macro>
+        <key>inairlocal</key>
+        <value>2014-01-01 17:30:00.0</value>
+      </macro>
+      <macro>
+        <key>inairutc</key>
+        <value>2014-01-01 12:23:00.0</value>
+      </macro>
+      <macro>
+        <key>ingateaccuracy</key>
+        <value>A</value>
+      </macro>
+      <macro>
+        <key>landedaccuracy</key>
+        <value>A</value>
+      </macro>
+      <macro>
+        <key>landedlocal</key>
+        <value>2014-01-01 13:45:00.0</value>
+      </macro>
+      <macro>
+        <key>landedutc</key>
+        <value>2014-01-01 17:17:00.0</value>
+      </macro>
+      <macro>
+        <key>opairlinecode</key>
+        <value>LH</value>
+      </macro>
+      <macro>
+        <key>outgateaccuracy</key>
+        <value>A</value>
+      </macro>
+      <macro>
+        <key>outgatelocal</key>
+        <value>2014-01-01 17:00:00.0</value>
+      </macro>
+      <macro>
+        <key>outgateutc</key>
+        <value>2014-01-01 13:35:00.0</value>
+      </macro>
+      <macro>
+        <key>recovflightid</key>
+        <value>?</value>
+      </macro>
+      <macro>
+        <key>regairlinecode</key>
+        <value>CL</value>
+      </macro>
+      <macro>
+        <key>schedarrapt</key>
+        <value>CDG</value>
+      </macro>
+      <macro>
+        <key>scheddepapt</key>
+        <value>CDG</value>
+      </macro>
+      <macro>
+        <key>ingatelocal</key>
+        <value>2014-01-01 05:28:00 GMT</value>
+      </macro>
+      <macro>
+        <key>ingateutc</key>
+        <value>2014-01-01 03:35:00 GMT</value>
+      </macro>
+      <macro>
+        <key>schedarrlocal</key>
+        <value>2014-01-01 02:40:00 GMT</value>
+      </macro>
+      <macro>
+        <key>schedarrutc</key>
+        <value>2014-01-01 02:40:00 GMT</value>
+      </macro>
+      <macro>
+        <key>scheddeplocal</key>
+        <value>2013-12-31 16:00:00 GMT</value>
+      </macro>
+      <macro>
+        <key>scheddeputc</key>
+        <value>2014-01-01 00:00:00 GMT</value>
+      </macro>
+    </macros>
+  </context>
+  <operator activated="true" class="process" compatibility="9.4.000" expanded="true" name="Process" origin="GENERATED_MODELOPS">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="9.5.001" expanded="true" height="68" name="Load Single Row Original" origin="GENERATED_MODELOPS" width="90" x="45" y="289">
+        <parameter key="repository_entry" value="Single Row Original"/>
+        <description align="center" color="transparent" colored="false" width="126">Load single row of data with all averages and modes.</description>
+      </operator>
+      <operator activated="true" class="subprocess" compatibility="9.5.001" expanded="true" height="82" name="Set Values from Context" origin="GENERATED_MODELOPS" width="90" x="246" y="289">
+        <process expanded="true">
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set Cancelled">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="Cancelled"/>
+            <parameter key="value" value="%{cancelled}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set DistanceGC">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="DistanceGC"/>
+            <parameter key="value" value="%{distancegc}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set FlightNumber">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="FlightNumber"/>
+            <parameter key="value" value="%{flightnumber}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set OpFlightNumber">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="OpFlightNumber"/>
+            <parameter key="value" value="%{opflightnumber}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set RegFlightNumber">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="RegFlightNumber"/>
+            <parameter key="value" value="%{regflightnumber}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set AircraftType">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="AircraftType"/>
+            <parameter key="value" value="%{aircrafttype}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set AirlineCode">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="AirlineCode"/>
+            <parameter key="value" value="%{airlinecode}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set AltArrApt">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="AltArrApt"/>
+            <parameter key="value" value="%{altarrapt}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set AltDepApt">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="AltDepApt"/>
+            <parameter key="value" value="%{altdepapt}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set ArrCountryCode">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="ArrCountryCode"/>
+            <parameter key="value" value="%{arrcountrycode}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set DepCountryCode">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="DepCountryCode"/>
+            <parameter key="value" value="%{depcountrycode}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set DiversionStatus">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="DiversionStatus"/>
+            <parameter key="value" value="%{diversionstatus}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set FlightId">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="FlightId"/>
+            <parameter key="value" value="%{flightid}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set InAirAccuracy">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="InAirAccuracy"/>
+            <parameter key="value" value="%{inairaccuracy}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set InAirLocal">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="InAirLocal"/>
+            <parameter key="value" value="%{inairlocal}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set InAirUtc">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="InAirUtc"/>
+            <parameter key="value" value="%{inairutc}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set InGateAccuracy">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="InGateAccuracy"/>
+            <parameter key="value" value="%{ingateaccuracy}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set LandedAccuracy">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="LandedAccuracy"/>
+            <parameter key="value" value="%{landedaccuracy}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set LandedLocal">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="LandedLocal"/>
+            <parameter key="value" value="%{landedlocal}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set LandedUtc">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="LandedUtc"/>
+            <parameter key="value" value="%{landedutc}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set OpAirlineCode">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="OpAirlineCode"/>
+            <parameter key="value" value="%{opairlinecode}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set OutGateAccuracy">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="OutGateAccuracy"/>
+            <parameter key="value" value="%{outgateaccuracy}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set OutGateLocal">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="OutGateLocal"/>
+            <parameter key="value" value="%{outgatelocal}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set OutGateUtc">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="OutGateUtc"/>
+            <parameter key="value" value="%{outgateutc}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set RecovFlightId">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="RecovFlightId"/>
+            <parameter key="value" value="%{recovflightid}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set RegAirlineCode">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="RegAirlineCode"/>
+            <parameter key="value" value="%{regairlinecode}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set SchedArrApt">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="SchedArrApt"/>
+            <parameter key="value" value="%{schedarrapt}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set SchedDepApt">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="SchedDepApt"/>
+            <parameter key="value" value="%{scheddepapt}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="generate_macro" compatibility="9.5.001" expanded="true" name="Calculate Date Value InGateLocal">
+            <list key="function_descriptions">
+              <parameter key="ingatelocal_long" value="date_millis(date_parse_custom(%{ingatelocal}, &quot;yyyy-MM-dd HH:mm:ss zzz&quot;, &quot;en&quot;))"/>
+            </list>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set InGateLocal">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="InGateLocal"/>
+            <parameter key="value" value="%{ingatelocal_long}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="generate_macro" compatibility="9.5.001" expanded="true" name="Calculate Date Value InGateUtc">
+            <list key="function_descriptions">
+              <parameter key="ingateutc_long" value="date_millis(date_parse_custom(%{ingateutc}, &quot;yyyy-MM-dd HH:mm:ss zzz&quot;, &quot;en&quot;))"/>
+            </list>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set InGateUtc">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="InGateUtc"/>
+            <parameter key="value" value="%{ingateutc_long}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="generate_macro" compatibility="9.5.001" expanded="true" name="Calculate Date Value SchedArrLocal">
+            <list key="function_descriptions">
+              <parameter key="schedarrlocal_long" value="date_millis(date_parse_custom(%{schedarrlocal}, &quot;yyyy-MM-dd HH:mm:ss zzz&quot;, &quot;en&quot;))"/>
+            </list>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set SchedArrLocal">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="SchedArrLocal"/>
+            <parameter key="value" value="%{schedarrlocal_long}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="generate_macro" compatibility="9.5.001" expanded="true" name="Calculate Date Value SchedArrUtc">
+            <list key="function_descriptions">
+              <parameter key="schedarrutc_long" value="date_millis(date_parse_custom(%{schedarrutc}, &quot;yyyy-MM-dd HH:mm:ss zzz&quot;, &quot;en&quot;))"/>
+            </list>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set SchedArrUtc">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="SchedArrUtc"/>
+            <parameter key="value" value="%{schedarrutc_long}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="generate_macro" compatibility="9.5.001" expanded="true" name="Calculate Date Value SchedDepLocal">
+            <list key="function_descriptions">
+              <parameter key="scheddeplocal_long" value="date_millis(date_parse_custom(%{scheddeplocal}, &quot;yyyy-MM-dd HH:mm:ss zzz&quot;, &quot;en&quot;))"/>
+            </list>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set SchedDepLocal">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="SchedDepLocal"/>
+            <parameter key="value" value="%{scheddeplocal_long}"/>
+            <list key="additional_values"/>
+          </operator>
+          <operator activated="true" class="generate_macro" compatibility="9.5.001" expanded="true" name="Calculate Date Value SchedDepUtc">
+            <list key="function_descriptions">
+              <parameter key="scheddeputc_long" value="date_millis(date_parse_custom(%{scheddeputc}, &quot;yyyy-MM-dd HH:mm:ss zzz&quot;, &quot;en&quot;))"/>
+            </list>
+          </operator>
+          <operator activated="true" class="set_data" compatibility="9.5.001" expanded="true" name="Set SchedDepUtc">
+            <parameter key="example_index" value="1"/>
+            <parameter key="count_backwards" value="false"/>
+            <parameter key="attribute_name" value="SchedDepUtc"/>
+            <parameter key="value" value="%{scheddeputc_long}"/>
+            <list key="additional_values"/>
+          </operator>
+          <connect from_port="in 1" to_op="Set Cancelled" to_port="example set input"/>
+          <connect from_op="Set Cancelled" from_port="example set output" to_op="Set DistanceGC" to_port="example set input"/>
+          <connect from_op="Set DistanceGC" from_port="example set output" to_op="Set FlightNumber" to_port="example set input"/>
+          <connect from_op="Set FlightNumber" from_port="example set output" to_op="Set OpFlightNumber" to_port="example set input"/>
+          <connect from_op="Set OpFlightNumber" from_port="example set output" to_op="Set RegFlightNumber" to_port="example set input"/>
+          <connect from_op="Set RegFlightNumber" from_port="example set output" to_op="Set AircraftType" to_port="example set input"/>
+          <connect from_op="Set AircraftType" from_port="example set output" to_op="Set AirlineCode" to_port="example set input"/>
+          <connect from_op="Set AirlineCode" from_port="example set output" to_op="Set AltArrApt" to_port="example set input"/>
+          <connect from_op="Set AltArrApt" from_port="example set output" to_op="Set AltDepApt" to_port="example set input"/>
+          <connect from_op="Set AltDepApt" from_port="example set output" to_op="Set ArrCountryCode" to_port="example set input"/>
+          <connect from_op="Set ArrCountryCode" from_port="example set output" to_op="Set DepCountryCode" to_port="example set input"/>
+          <connect from_op="Set DepCountryCode" from_port="example set output" to_op="Set DiversionStatus" to_port="example set input"/>
+          <connect from_op="Set DiversionStatus" from_port="example set output" to_op="Set FlightId" to_port="example set input"/>
+          <connect from_op="Set FlightId" from_port="example set output" to_op="Set InAirAccuracy" to_port="example set input"/>
+          <connect from_op="Set InAirAccuracy" from_port="example set output" to_op="Set InAirLocal" to_port="example set input"/>
+          <connect from_op="Set InAirLocal" from_port="example set output" to_op="Set InAirUtc" to_port="example set input"/>
+          <connect from_op="Set InAirUtc" from_port="example set output" to_op="Set InGateAccuracy" to_port="example set input"/>
+          <connect from_op="Set InGateAccuracy" from_port="example set output" to_op="Set LandedAccuracy" to_port="example set input"/>
+          <connect from_op="Set LandedAccuracy" from_port="example set output" to_op="Set LandedLocal" to_port="example set input"/>
+          <connect from_op="Set LandedLocal" from_port="example set output" to_op="Set LandedUtc" to_port="example set input"/>
+          <connect from_op="Set LandedUtc" from_port="example set output" to_op="Set OpAirlineCode" to_port="example set input"/>
+          <connect from_op="Set OpAirlineCode" from_port="example set output" to_op="Set OutGateAccuracy" to_port="example set input"/>
+          <connect from_op="Set OutGateAccuracy" from_port="example set output" to_op="Set OutGateLocal" to_port="example set input"/>
+          <connect from_op="Set OutGateLocal" from_port="example set output" to_op="Set OutGateUtc" to_port="example set input"/>
+          <connect from_op="Set OutGateUtc" from_port="example set output" to_op="Set RecovFlightId" to_port="example set input"/>
+          <connect from_op="Set RecovFlightId" from_port="example set output" to_op="Set RegAirlineCode" to_port="example set input"/>
+          <connect from_op="Set RegAirlineCode" from_port="example set output" to_op="Set SchedArrApt" to_port="example set input"/>
+          <connect from_op="Set SchedArrApt" from_port="example set output" to_op="Set SchedDepApt" to_port="example set input"/>
+          <connect from_op="Set SchedDepApt" from_port="example set output" to_op="Calculate Date Value InGateLocal" to_port="through 1"/>
+          <connect from_op="Calculate Date Value InGateLocal" from_port="through 1" to_op="Set InGateLocal" to_port="example set input"/>
+          <connect from_op="Set InGateLocal" from_port="example set output" to_op="Calculate Date Value InGateUtc" to_port="through 1"/>
+          <connect from_op="Calculate Date Value InGateUtc" from_port="through 1" to_op="Set InGateUtc" to_port="example set input"/>
+          <connect from_op="Set InGateUtc" from_port="example set output" to_op="Calculate Date Value SchedArrLocal" to_port="through 1"/>
+          <connect from_op="Calculate Date Value SchedArrLocal" from_port="through 1" to_op="Set SchedArrLocal" to_port="example set input"/>
+          <connect from_op="Set SchedArrLocal" from_port="example set output" to_op="Calculate Date Value SchedArrUtc" to_port="through 1"/>
+          <connect from_op="Calculate Date Value SchedArrUtc" from_port="through 1" to_op="Set SchedArrUtc" to_port="example set input"/>
+          <connect from_op="Set SchedArrUtc" from_port="example set output" to_op="Calculate Date Value SchedDepLocal" to_port="through 1"/>
+          <connect from_op="Calculate Date Value SchedDepLocal" from_port="through 1" to_op="Set SchedDepLocal" to_port="example set input"/>
+          <connect from_op="Set SchedDepLocal" from_port="example set output" to_op="Calculate Date Value SchedDepUtc" to_port="through 1"/>
+          <connect from_op="Calculate Date Value SchedDepUtc" from_port="through 1" to_op="Set SchedDepUtc" to_port="example set input"/>
+          <connect from_op="Set SchedDepUtc" from_port="example set output" to_port="out 1"/>
+          <portSpacing port="source_in 1" spacing="0"/>
+          <portSpacing port="source_in 2" spacing="0"/>
+          <portSpacing port="sink_out 1" spacing="0"/>
+          <portSpacing port="sink_out 2" spacing="0"/>
+        </process>
+        <description align="center" color="transparent" colored="false" width="126">Take the values from the process context and override the values in the single row with those.</description>
+      </operator>
+      <operator activated="true" class="subprocess" compatibility="9.5.001" expanded="true" height="82" name="Preprocessing" origin="GENERATED_MODELOPS" width="90" x="447" y="289">
+        <process expanded="true">
+          <operator activated="true" class="subprocess" compatibility="9.5.001" expanded="true" height="82" name="Initial Type Unification" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+            <process expanded="true">
+              <operator activated="true" class="nominal_to_text" compatibility="9.5.001" expanded="true" height="82" name="Initial Nominal to Text" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                <parameter key="attribute_filter_type" value="value_type"/>
+                <parameter key="attribute" value=""/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="nominal"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="file_path"/>
+                <parameter key="block_type" value="single_value"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="single_value"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="true"/>
+                <description align="center" color="transparent" colored="false" width="126">Transform all nominal columns to text so that we make sure that all will have polynominal type after the next transformation.</description>
+              </operator>
+              <operator activated="true" class="text_to_nominal" compatibility="9.5.001" expanded="true" height="82" name="Initial Text to Nominal" origin="GENERATED_MODELOPS" width="90" x="179" y="34">
+                <parameter key="attribute_filter_type" value="value_type"/>
+                <parameter key="attribute" value=""/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="text"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="text"/>
+                <parameter key="block_type" value="value_matrix"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="true"/>
+                <description align="center" color="transparent" colored="false" width="126">Transform all text columns into polynominal columns.</description>
+              </operator>
+              <operator activated="true" class="numerical_to_real" compatibility="9.5.001" expanded="true" height="82" name="Initial Numerical to Real" origin="GENERATED_MODELOPS" width="90" x="313" y="34">
+                <parameter key="attribute_filter_type" value="value_type"/>
+                <parameter key="attribute" value=""/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="numeric"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="integer"/>
+                <parameter key="block_type" value="value_series"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_series_end"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="true"/>
+                <description align="center" color="transparent" colored="false" width="126">Turn all numerical columns (not integers though) into real columns.</description>
+              </operator>
+              <connect from_port="in 1" to_op="Initial Nominal to Text" to_port="example set input"/>
+              <connect from_op="Initial Nominal to Text" from_port="example set output" to_op="Initial Text to Nominal" to_port="example set input"/>
+              <connect from_op="Initial Text to Nominal" from_port="example set output" to_op="Initial Numerical to Real" to_port="example set input"/>
+              <connect from_op="Initial Numerical to Real" from_port="example set output" to_port="out 1"/>
+              <portSpacing port="source_in 1" spacing="0"/>
+              <portSpacing port="source_in 2" spacing="0"/>
+              <portSpacing port="sink_out 1" spacing="0"/>
+              <portSpacing port="sink_out 2" spacing="0"/>
+              <description align="center" color="yellow" colored="false" height="89" resized="false" width="325" x="213" y="243">After these three operator, all columns (attributes) will be either nominal or real.&lt;br&gt;&lt;br&gt;Date or time columns will keep their original type.</description>
+            </process>
+            <description align="center" color="transparent" colored="false" width="126">Unify all value types before anything else.</description>
+          </operator>
+          <operator activated="true" class="concurrency:loop_attributes" compatibility="9.5.001" expanded="true" height="82" name="Change to Regular" origin="GENERATED_MODELOPS" width="90" x="179" y="34">
+            <parameter key="attribute_filter_type" value="all"/>
+            <parameter key="attribute" value=""/>
+            <parameter key="attributes" value=""/>
+            <parameter key="use_except_expression" value="false"/>
+            <parameter key="value_type" value="attribute_value"/>
+            <parameter key="use_value_type_exception" value="false"/>
+            <parameter key="except_value_type" value="time"/>
+            <parameter key="block_type" value="attribute_block"/>
+            <parameter key="use_block_type_exception" value="false"/>
+            <parameter key="except_block_type" value="value_matrix_row_start"/>
+            <parameter key="invert_selection" value="false"/>
+            <parameter key="include_special_attributes" value="true"/>
+            <parameter key="attribute_name_macro" value="loop_attribute"/>
+            <parameter key="reuse_results" value="true"/>
+            <parameter key="enable_parallel_execution" value="true"/>
+            <process expanded="true">
+              <operator activated="true" class="set_role" compatibility="9.5.001" expanded="true" height="82" name="Set Role" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                <parameter key="attribute_name" value="%{loop_attribute}"/>
+                <parameter key="target_role" value="regular"/>
+                <list key="set_additional_roles"/>
+              </operator>
+              <connect from_port="input 1" to_op="Set Role" to_port="example set input"/>
+              <connect from_op="Set Role" from_port="example set output" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+            <description align="center" color="transparent" colored="false" width="126">Change role to 'regular' for all columns.</description>
+          </operator>
+          <operator activated="true" class="select_subprocess" compatibility="9.5.001" expanded="true" height="82" name="Should Discretize?" origin="GENERATED_MODELOPS" width="90" x="313" y="34">
+            <parameter key="select_which" value="2"/>
+            <process expanded="true">
+              <connect from_port="input 1" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+            <process expanded="true">
+              <operator activated="true" class="discretize_by_bins" compatibility="9.5.001" expanded="true" height="103" name="Binning" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                <parameter key="return_preprocessing_model" value="false"/>
+                <parameter key="create_view" value="false"/>
+                <parameter key="attribute_filter_type" value="single"/>
+                <parameter key="attribute" value="Cancelled"/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="numeric"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="real"/>
+                <parameter key="block_type" value="value_series"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_series_end"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="true"/>
+                <parameter key="number_of_bins" value="2"/>
+                <parameter key="define_boundaries" value="false"/>
+                <parameter key="range_name_type" value="short"/>
+                <parameter key="automatic_number_of_digits" value="true"/>
+                <parameter key="number_of_digits" value="3"/>
+                <description align="center" color="transparent" colored="false" width="126">Discretize by binning (same range per bin).</description>
+              </operator>
+              <connect from_port="input 1" to_op="Binning" to_port="example set input"/>
+              <connect from_op="Binning" from_port="example set output" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+            <process expanded="true">
+              <operator activated="true" class="discretize_by_frequency" compatibility="9.5.001" expanded="true" height="103" name="Frequency" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                <parameter key="return_preprocessing_model" value="false"/>
+                <parameter key="create_view" value="false"/>
+                <parameter key="attribute_filter_type" value="single"/>
+                <parameter key="attribute" value="Age"/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="numeric"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="real"/>
+                <parameter key="block_type" value="value_series"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_series_end"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="true"/>
+                <parameter key="use_sqrt_of_examples" value="false"/>
+                <parameter key="number_of_bins" value="2"/>
+                <parameter key="range_name_type" value="short"/>
+                <parameter key="automatic_number_of_digits" value="true"/>
+                <parameter key="number_of_digits" value="-1"/>
+                <description align="center" color="transparent" colored="false" width="126">Discretize by frequency (same count per bin).</description>
+              </operator>
+              <connect from_port="input 1" to_op="Frequency" to_port="example set input"/>
+              <connect from_op="Frequency" from_port="example set output" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+            <description align="center" color="transparent" colored="false" width="126">Should discretize numerical target column?</description>
+          </operator>
+          <operator activated="true" class="select_subprocess" compatibility="9.5.001" expanded="true" height="82" name="Map Values?" origin="GENERATED_MODELOPS" width="90" x="447" y="34">
+            <parameter key="select_which" value="1"/>
+            <process expanded="true">
+              <connect from_port="input 1" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+            <process expanded="true">
+              <operator activated="true" class="map" compatibility="9.5.001" expanded="true" height="82" name="Map Values" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                <parameter key="attribute_filter_type" value="single"/>
+                <parameter key="attribute" value="Survived"/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="attribute_value"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="true"/>
+                <list key="value_mappings"/>
+                <parameter key="consider_regular_expressions" value="false"/>
+                <parameter key="add_default_mapping" value="false"/>
+                <description align="center" color="transparent" colored="false" width="126">Map some nominal target values to new values.</description>
+              </operator>
+              <connect from_port="input 1" to_op="Map Values" to_port="example set input"/>
+              <connect from_op="Map Values" from_port="example set output" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+            <description align="center" color="transparent" colored="false" width="126">Should map nominal values?</description>
+          </operator>
+          <operator activated="true" class="select_subprocess" compatibility="9.5.001" expanded="true" height="82" name="Positive Class?" origin="GENERATED_MODELOPS" width="90" x="581" y="34">
+            <parameter key="select_which" value="2"/>
+            <process expanded="true">
+              <connect from_port="input 1" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+            <process expanded="true">
+              <operator activated="true" class="nominal_to_binominal" compatibility="9.5.001" expanded="true" height="103" name="Nominal to Binominal" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                <parameter key="return_preprocessing_model" value="false"/>
+                <parameter key="create_view" value="false"/>
+                <parameter key="attribute_filter_type" value="single"/>
+                <parameter key="attribute" value="Cancelled"/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="nominal"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="file_path"/>
+                <parameter key="block_type" value="single_value"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="single_value"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="true"/>
+                <parameter key="transform_binominal" value="false"/>
+                <parameter key="use_underscore_in_name" value="false"/>
+                <description align="center" color="transparent" colored="false" width="126">Make sure that target is binary for positive class mapping.</description>
+              </operator>
+              <operator activated="true" class="remap_binominals" compatibility="9.5.001" expanded="true" height="82" name="Define Positive Class" origin="GENERATED_MODELOPS" width="90" x="179" y="34">
+                <parameter key="attribute_filter_type" value="single"/>
+                <parameter key="attribute" value="Cancelled"/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="binominal"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="binominal"/>
+                <parameter key="block_type" value="value_matrix_start"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="true"/>
+                <parameter key="negative_value" value="range2"/>
+                <parameter key="positive_value" value="range1"/>
+                <description align="center" color="transparent" colored="false" width="126">Potentially define which one should be the positive class.</description>
+              </operator>
+              <connect from_port="input 1" to_op="Nominal to Binominal" to_port="example set input"/>
+              <connect from_op="Nominal to Binominal" from_port="example set output" to_op="Define Positive Class" to_port="example set input"/>
+              <connect from_op="Define Positive Class" from_port="example set output" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+            <description align="center" color="transparent" colored="false" width="126">Should define positive class?</description>
+          </operator>
+          <operator activated="true" class="select_subprocess" compatibility="9.5.001" expanded="true" height="82" name="Remove Columns?" origin="GENERATED_MODELOPS" width="90" x="715" y="34">
+            <parameter key="select_which" value="2"/>
+            <process expanded="true">
+              <connect from_port="input 1" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+            <process expanded="true">
+              <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Remove Columns" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                <parameter key="attribute_filter_type" value="regular_expression"/>
+                <parameter key="attribute" value=""/>
+                <parameter key="attributes" value=""/>
+                <parameter key="regular_expression" value="\QAltDepApt\E|\QDiversionStatus\E|\QOutGateAccuracy\E|\QInGateAccuracy\E|\QRegAirlineCode\E|\QLandedLocal\E|\QInAirUtc\E|\QOutGateUtc\E|\QSchedDepUtc\E|\QSchedDepLocal\E|\QInGateUtc\E|\QSchedArrLocal\E|\QLandedUtc\E|\QOutGateLocal\E|\QLandedAccuracy\E|\QRegFlightNumber\E|\QAltArrApt\E|\QFlightId\E|\QInAirAccuracy\E|\QInAirLocal\E|\QInGateLocal\E|\QSchedArrUtc\E|\QRecovFlightId\E"/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="attribute_value"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="true"/>
+                <parameter key="include_special_attributes" value="true"/>
+                <description align="center" color="transparent" colored="false" width="126">Potentially remove columns.</description>
+              </operator>
+              <connect from_port="input 1" to_op="Remove Columns" to_port="example set input"/>
+              <connect from_op="Remove Columns" from_port="example set output" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+            <description align="center" color="transparent" colored="false" width="126">Should remove columns?</description>
+          </operator>
+          <operator activated="true" class="select_subprocess" compatibility="9.5.001" expanded="true" height="82" name="Handle Dates?" origin="GENERATED_MODELOPS" width="90" x="849" y="34">
+            <parameter key="select_which" value="1"/>
+            <process expanded="true">
+              <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Remove Dates" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                <parameter key="attribute_filter_type" value="value_type"/>
+                <parameter key="attribute" value=""/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="date_time"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="true"/>
+                <parameter key="include_special_attributes" value="false"/>
+                <description align="center" color="transparent" colored="false" width="126">No date processing is desired here, so simply remove the date columns completely.</description>
+              </operator>
+              <connect from_port="input 1" to_op="Remove Dates" to_port="example set input"/>
+              <connect from_op="Remove Dates" from_port="example set output" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+            <process expanded="true">
+              <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Select Date Attributes" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                <parameter key="attribute_filter_type" value="value_type"/>
+                <parameter key="attribute" value=""/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="date_time"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="time"/>
+                <parameter key="block_type" value="attribute_block"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="false"/>
+                <description align="center" color="transparent" colored="false" width="126">Check if there actually are any date columns in the data.</description>
+              </operator>
+              <operator activated="true" class="branch" compatibility="9.5.001" expanded="true" height="103" name="Branch if Dates" origin="GENERATED_MODELOPS" width="90" x="179" y="34">
+                <parameter key="condition_type" value="min_attributes"/>
+                <parameter key="condition_value" value="1"/>
+                <parameter key="expression" value=""/>
+                <parameter key="io_object" value="ANOVAMatrix"/>
+                <parameter key="return_inner_output" value="true"/>
+                <process expanded="true">
+                  <operator activated="true" class="generate_attributes" compatibility="9.5.001" expanded="true" height="82" name="Create Today Column" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                    <list key="function_descriptions">
+                      <parameter key="Today" value="date_now()"/>
+                    </list>
+                    <parameter key="keep_all" value="true"/>
+                    <description align="center" color="transparent" colored="false" width="126">Adds an additional column with the date today. This can be useful for calculations of ages etc.</description>
+                  </operator>
+                  <operator activated="true" class="concurrency:loop_attributes" compatibility="9.5.001" expanded="true" height="82" name="Differences Loop 1" origin="GENERATED_MODELOPS" width="90" x="179" y="34">
+                    <parameter key="attribute_filter_type" value="value_type"/>
+                    <parameter key="attribute" value=""/>
+                    <parameter key="attributes" value=""/>
+                    <parameter key="use_except_expression" value="false"/>
+                    <parameter key="value_type" value="date_time"/>
+                    <parameter key="use_value_type_exception" value="false"/>
+                    <parameter key="except_value_type" value="time"/>
+                    <parameter key="block_type" value="attribute_block"/>
+                    <parameter key="use_block_type_exception" value="false"/>
+                    <parameter key="except_block_type" value="value_matrix_row_start"/>
+                    <parameter key="invert_selection" value="false"/>
+                    <parameter key="include_special_attributes" value="false"/>
+                    <parameter key="attribute_name_macro" value="loop_attribute1"/>
+                    <parameter key="reuse_results" value="true"/>
+                    <parameter key="enable_parallel_execution" value="true"/>
+                    <process expanded="true">
+                      <operator activated="true" class="concurrency:loop_attributes" compatibility="9.5.001" expanded="true" height="82" name="Differences Loop 2" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                        <parameter key="attribute_filter_type" value="value_type"/>
+                        <parameter key="attribute" value=""/>
+                        <parameter key="attributes" value=""/>
+                        <parameter key="use_except_expression" value="false"/>
+                        <parameter key="value_type" value="date_time"/>
+                        <parameter key="use_value_type_exception" value="false"/>
+                        <parameter key="except_value_type" value="time"/>
+                        <parameter key="block_type" value="attribute_block"/>
+                        <parameter key="use_block_type_exception" value="false"/>
+                        <parameter key="except_block_type" value="value_matrix_row_start"/>
+                        <parameter key="invert_selection" value="false"/>
+                        <parameter key="include_special_attributes" value="false"/>
+                        <parameter key="attribute_name_macro" value="loop_attribute2"/>
+                        <parameter key="reuse_results" value="true"/>
+                        <parameter key="enable_parallel_execution" value="true"/>
+                        <process expanded="true">
+                          <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Select Attributes" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                            <parameter key="attribute_filter_type" value="single"/>
+                            <parameter key="attribute" value="days_diff(%{loop_attribute2}, %{loop_attribute1})"/>
+                            <parameter key="attributes" value=""/>
+                            <parameter key="use_except_expression" value="false"/>
+                            <parameter key="value_type" value="attribute_value"/>
+                            <parameter key="use_value_type_exception" value="false"/>
+                            <parameter key="except_value_type" value="time"/>
+                            <parameter key="block_type" value="attribute_block"/>
+                            <parameter key="use_block_type_exception" value="false"/>
+                            <parameter key="except_block_type" value="value_matrix_row_start"/>
+                            <parameter key="invert_selection" value="false"/>
+                            <parameter key="include_special_attributes" value="true"/>
+                            <description align="center" color="transparent" colored="false" width="126">Select the other way around here and store in the macro if that column already exists.</description>
+                          </operator>
+                          <operator activated="true" class="extract_macro" compatibility="9.5.001" expanded="true" height="68" name="Extract Macro" origin="GENERATED_MODELOPS" width="90" x="246" y="34">
+                            <parameter key="macro" value="existing_diffs"/>
+                            <parameter key="macro_type" value="number_of_attributes"/>
+                            <parameter key="statistics" value="average"/>
+                            <parameter key="attribute_name" value=""/>
+                            <list key="additional_macros"/>
+                            <description align="center" color="transparent" colored="false" width="126">Store if the other way round exists.</description>
+                          </operator>
+                          <operator activated="true" class="branch" compatibility="9.5.001" expanded="true" height="103" name="Branch (2)" origin="GENERATED_MODELOPS" width="90" x="246" y="187">
+                            <parameter key="condition_type" value="expression"/>
+                            <parameter key="expression" value="(!equals(%{loop_attribute1},%{loop_attribute2}))&amp;&amp;(eval(%{existing_diffs})==0)"/>
+                            <parameter key="io_object" value="ANOVAMatrix"/>
+                            <parameter key="return_inner_output" value="true"/>
+                            <process expanded="true">
+                              <operator activated="true" class="generate_attributes" compatibility="9.5.001" expanded="true" height="82" name="Generate Differences" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                                <list key="function_descriptions">
+                                  <parameter key="days_diff(%{loop_attribute1}, %{loop_attribute2})" value="date_diff(#{loop_attribute1}, #{loop_attribute2})/(1000.0*3600.0*24)"/>
+                                </list>
+                                <parameter key="keep_all" value="true"/>
+                                <description align="center" color="transparent" colored="false" width="126">Generate the difference for the two date columns in milliseconds.</description>
+                              </operator>
+                              <connect from_port="input 1" to_op="Generate Differences" to_port="example set input"/>
+                              <connect from_op="Generate Differences" from_port="example set output" to_port="input 1"/>
+                              <portSpacing port="source_condition" spacing="0"/>
+                              <portSpacing port="source_input 1" spacing="0"/>
+                              <portSpacing port="source_input 2" spacing="0"/>
+                              <portSpacing port="sink_input 1" spacing="0"/>
+                              <portSpacing port="sink_input 2" spacing="0"/>
+                            </process>
+                            <process expanded="true">
+                              <connect from_port="input 1" to_port="input 1"/>
+                              <portSpacing port="source_condition" spacing="0"/>
+                              <portSpacing port="source_input 1" spacing="0"/>
+                              <portSpacing port="source_input 2" spacing="0"/>
+                              <portSpacing port="sink_input 1" spacing="0"/>
+                              <portSpacing port="sink_input 2" spacing="0"/>
+                              <description align="left" color="orange" colored="true" height="67" resized="false" width="267" x="56" y="120">Both date columns are the same or the other way round already was created - do nothing here!</description>
+                            </process>
+                            <description align="center" color="transparent" colored="false" width="126">Only calculate the differences between the two date columns if the columns are not equal and if the other way around has not been calculated yet.</description>
+                          </operator>
+                          <connect from_port="input 1" to_op="Select Attributes" to_port="example set input"/>
+                          <connect from_op="Select Attributes" from_port="example set output" to_op="Extract Macro" to_port="example set"/>
+                          <connect from_op="Select Attributes" from_port="original" to_op="Branch (2)" to_port="input 1"/>
+                          <connect from_op="Branch (2)" from_port="input 1" to_port="output 1"/>
+                          <portSpacing port="source_input 1" spacing="0"/>
+                          <portSpacing port="source_input 2" spacing="0"/>
+                          <portSpacing port="sink_output 1" spacing="0"/>
+                          <portSpacing port="sink_output 2" spacing="0"/>
+                        </process>
+                        <description align="center" color="transparent" colored="false" width="126">Loop over all combinations of date attributes and calculate their differences (which includes the new today column generated previously).</description>
+                      </operator>
+                      <connect from_port="input 1" to_op="Differences Loop 2" to_port="input 1"/>
+                      <connect from_op="Differences Loop 2" from_port="output 1" to_port="output 1"/>
+                      <portSpacing port="source_input 1" spacing="0"/>
+                      <portSpacing port="source_input 2" spacing="0"/>
+                      <portSpacing port="sink_output 1" spacing="0"/>
+                      <portSpacing port="sink_output 2" spacing="0"/>
+                    </process>
+                    <description align="center" color="transparent" colored="false" width="126">Loop over all combinations of date attributes and calculate their differences (which includes the new today column generated previously).</description>
+                  </operator>
+                  <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Remove Today Column" origin="GENERATED_MODELOPS" width="90" x="313" y="34">
+                    <parameter key="attribute_filter_type" value="single"/>
+                    <parameter key="attribute" value="Today"/>
+                    <parameter key="attributes" value=""/>
+                    <parameter key="use_except_expression" value="false"/>
+                    <parameter key="value_type" value="attribute_value"/>
+                    <parameter key="use_value_type_exception" value="false"/>
+                    <parameter key="except_value_type" value="time"/>
+                    <parameter key="block_type" value="attribute_block"/>
+                    <parameter key="use_block_type_exception" value="false"/>
+                    <parameter key="except_block_type" value="value_matrix_row_start"/>
+                    <parameter key="invert_selection" value="true"/>
+                    <parameter key="include_special_attributes" value="false"/>
+                    <description align="center" color="transparent" colored="false" width="126">Remove the generated today column again.</description>
+                  </operator>
+                  <operator activated="true" class="concurrency:loop_attributes" compatibility="9.5.001" expanded="true" height="82" name="Extraction Loop" origin="GENERATED_MODELOPS" width="90" x="447" y="34">
+                    <parameter key="attribute_filter_type" value="value_type"/>
+                    <parameter key="attribute" value=""/>
+                    <parameter key="attributes" value=""/>
+                    <parameter key="use_except_expression" value="false"/>
+                    <parameter key="value_type" value="date_time"/>
+                    <parameter key="use_value_type_exception" value="false"/>
+                    <parameter key="except_value_type" value="time"/>
+                    <parameter key="block_type" value="attribute_block"/>
+                    <parameter key="use_block_type_exception" value="false"/>
+                    <parameter key="except_block_type" value="value_matrix_row_start"/>
+                    <parameter key="invert_selection" value="false"/>
+                    <parameter key="include_special_attributes" value="false"/>
+                    <parameter key="attribute_name_macro" value="loop_attribute"/>
+                    <parameter key="reuse_results" value="true"/>
+                    <parameter key="enable_parallel_execution" value="true"/>
+                    <process expanded="true">
+                      <operator activated="true" class="date_to_numerical" compatibility="9.5.001" expanded="true" height="82" name="Extract Day of Month" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                        <parameter key="attribute_name" value="%{loop_attribute}"/>
+                        <parameter key="time_unit" value="day"/>
+                        <parameter key="millisecond_relative_to" value="second"/>
+                        <parameter key="second_relative_to" value="minute"/>
+                        <parameter key="minute_relative_to" value="hour"/>
+                        <parameter key="hour_relative_to" value="day"/>
+                        <parameter key="day_relative_to" value="month"/>
+                        <parameter key="week_relative_to" value="year"/>
+                        <parameter key="month_relative_to" value="year"/>
+                        <parameter key="quarter_relative_to" value="year"/>
+                        <parameter key="half_year_relative_to" value="year"/>
+                        <parameter key="year_relative_to" value="era"/>
+                        <parameter key="keep_old_attribute" value="true"/>
+                      </operator>
+                      <operator activated="true" class="rename" compatibility="9.5.001" expanded="true" height="82" name="Rename DoM" origin="GENERATED_MODELOPS" width="90" x="179" y="34">
+                        <parameter key="old_name" value="%{loop_attribute}_day"/>
+                        <parameter key="new_name" value="%{loop_attribute}_day_of_month"/>
+                        <list key="rename_additional_attributes"/>
+                      </operator>
+                      <operator activated="true" class="aggregate" compatibility="9.5.001" expanded="true" height="82" name="Aggregate DoM" origin="GENERATED_MODELOPS" width="90" x="313" y="34">
+                        <parameter key="use_default_aggregation" value="false"/>
+                        <parameter key="attribute_filter_type" value="all"/>
+                        <parameter key="attribute" value=""/>
+                        <parameter key="attributes" value=""/>
+                        <parameter key="use_except_expression" value="false"/>
+                        <parameter key="value_type" value="attribute_value"/>
+                        <parameter key="use_value_type_exception" value="false"/>
+                        <parameter key="except_value_type" value="time"/>
+                        <parameter key="block_type" value="attribute_block"/>
+                        <parameter key="use_block_type_exception" value="false"/>
+                        <parameter key="except_block_type" value="value_matrix_row_start"/>
+                        <parameter key="invert_selection" value="false"/>
+                        <parameter key="include_special_attributes" value="false"/>
+                        <parameter key="default_aggregation_function" value="average"/>
+                        <list key="aggregation_attributes">
+                          <parameter key="%{loop_attribute}_day_of_month" value="count"/>
+                        </list>
+                        <parameter key="group_by_attributes" value="%{loop_attribute}_day_of_month"/>
+                        <parameter key="count_all_combinations" value="false"/>
+                        <parameter key="only_distinct" value="false"/>
+                        <parameter key="ignore_missings" value="true"/>
+                      </operator>
+                      <operator activated="true" class="extract_macro" compatibility="9.5.001" expanded="true" height="68" name="Extract DoM Rows" origin="GENERATED_MODELOPS" width="90" x="447" y="34">
+                        <parameter key="macro" value="dom_rows"/>
+                        <parameter key="macro_type" value="number_of_examples"/>
+                        <parameter key="statistics" value="average"/>
+                        <parameter key="attribute_name" value="maximum(count(%{date_attribute}_day_of_month))"/>
+                        <parameter key="example_index" value="1"/>
+                        <list key="additional_macros"/>
+                      </operator>
+                      <operator activated="true" class="branch" compatibility="9.5.001" expanded="true" height="103" name="Branch (3)" origin="GENERATED_MODELOPS" width="90" x="581" y="34">
+                        <parameter key="condition_type" value="expression"/>
+                        <parameter key="expression" value="if(eval(%{dom_rows})&lt;28,FALSE,TRUE)"/>
+                        <parameter key="io_object" value="ANOVAMatrix"/>
+                        <parameter key="return_inner_output" value="true"/>
+                        <process expanded="true">
+                          <connect from_port="input 1" to_port="input 1"/>
+                          <portSpacing port="source_condition" spacing="0"/>
+                          <portSpacing port="source_input 1" spacing="0"/>
+                          <portSpacing port="source_input 2" spacing="0"/>
+                          <portSpacing port="sink_input 1" spacing="0"/>
+                          <portSpacing port="sink_input 2" spacing="0"/>
+                        </process>
+                        <process expanded="true">
+                          <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Select Attributes (3)" origin="GENERATED_MODELOPS" width="90" x="112" y="34">
+                            <parameter key="attribute_filter_type" value="single"/>
+                            <parameter key="attribute" value="%{loop_attribute}_day_of_month"/>
+                            <parameter key="attributes" value=""/>
+                            <parameter key="use_except_expression" value="false"/>
+                            <parameter key="value_type" value="attribute_value"/>
+                            <parameter key="use_value_type_exception" value="false"/>
+                            <parameter key="except_value_type" value="time"/>
+                            <parameter key="block_type" value="attribute_block"/>
+                            <parameter key="use_block_type_exception" value="false"/>
+                            <parameter key="except_block_type" value="value_matrix_row_start"/>
+                            <parameter key="invert_selection" value="true"/>
+                            <parameter key="include_special_attributes" value="false"/>
+                          </operator>
+                          <connect from_port="input 1" to_op="Select Attributes (3)" to_port="example set input"/>
+                          <connect from_op="Select Attributes (3)" from_port="example set output" to_port="input 1"/>
+                          <portSpacing port="source_condition" spacing="0"/>
+                          <portSpacing port="source_input 1" spacing="0"/>
+                          <portSpacing port="source_input 2" spacing="0"/>
+                          <portSpacing port="sink_input 1" spacing="0"/>
+                          <portSpacing port="sink_input 2" spacing="0"/>
+                        </process>
+                      </operator>
+                      <operator activated="true" class="date_to_numerical" compatibility="9.5.001" expanded="true" height="82" name="Extract Month" origin="GENERATED_MODELOPS" width="90" x="45" y="187">
+                        <parameter key="attribute_name" value="%{loop_attribute}"/>
+                        <parameter key="time_unit" value="month"/>
+                        <parameter key="millisecond_relative_to" value="second"/>
+                        <parameter key="second_relative_to" value="minute"/>
+                        <parameter key="minute_relative_to" value="hour"/>
+                        <parameter key="hour_relative_to" value="day"/>
+                        <parameter key="day_relative_to" value="month"/>
+                        <parameter key="week_relative_to" value="year"/>
+                        <parameter key="month_relative_to" value="year"/>
+                        <parameter key="quarter_relative_to" value="year"/>
+                        <parameter key="half_year_relative_to" value="year"/>
+                        <parameter key="year_relative_to" value="era"/>
+                        <parameter key="keep_old_attribute" value="true"/>
+                      </operator>
+                      <operator activated="true" class="rename" compatibility="9.5.001" expanded="true" height="82" name="Rename MoY" origin="GENERATED_MODELOPS" width="90" x="179" y="187">
+                        <parameter key="old_name" value="%{loop_attribute}_month"/>
+                        <parameter key="new_name" value="%{loop_attribute}_month_of_year"/>
+                        <list key="rename_additional_attributes"/>
+                      </operator>
+                      <operator activated="true" class="aggregate" compatibility="9.5.001" expanded="true" height="82" name="Aggregate MoY" origin="GENERATED_MODELOPS" width="90" x="313" y="187">
+                        <parameter key="use_default_aggregation" value="false"/>
+                        <parameter key="attribute_filter_type" value="all"/>
+                        <parameter key="attribute" value=""/>
+                        <parameter key="attributes" value=""/>
+                        <parameter key="use_except_expression" value="false"/>
+                        <parameter key="value_type" value="attribute_value"/>
+                        <parameter key="use_value_type_exception" value="false"/>
+                        <parameter key="except_value_type" value="time"/>
+                        <parameter key="block_type" value="attribute_block"/>
+                        <parameter key="use_block_type_exception" value="false"/>
+                        <parameter key="except_block_type" value="value_matrix_row_start"/>
+                        <parameter key="invert_selection" value="false"/>
+                        <parameter key="include_special_attributes" value="false"/>
+                        <parameter key="default_aggregation_function" value="average"/>
+                        <list key="aggregation_attributes">
+                          <parameter key="%{loop_attribute}_month_of_year" value="count"/>
+                        </list>
+                        <parameter key="group_by_attributes" value="%{loop_attribute}_month_of_year"/>
+                        <parameter key="count_all_combinations" value="false"/>
+                        <parameter key="only_distinct" value="false"/>
+                        <parameter key="ignore_missings" value="true"/>
+                      </operator>
+                      <operator activated="true" class="extract_macro" compatibility="9.5.001" expanded="true" height="68" name="Extract MoY Rows" origin="GENERATED_MODELOPS" width="90" x="447" y="187">
+                        <parameter key="macro" value="moy_rows"/>
+                        <parameter key="macro_type" value="number_of_examples"/>
+                        <parameter key="statistics" value="average"/>
+                        <parameter key="attribute_name" value="maximum(count(%{date_attribute}_day_of_month))"/>
+                        <parameter key="example_index" value="1"/>
+                        <list key="additional_macros"/>
+                      </operator>
+                      <operator activated="true" class="branch" compatibility="9.5.001" expanded="true" height="103" name="Branch (4)" origin="GENERATED_MODELOPS" width="90" x="581" y="187">
+                        <parameter key="condition_type" value="expression"/>
+                        <parameter key="expression" value="if(eval(%{moy_rows})&lt;12,FALSE,TRUE)"/>
+                        <parameter key="io_object" value="ANOVAMatrix"/>
+                        <parameter key="return_inner_output" value="true"/>
+                        <process expanded="true">
+                          <connect from_port="input 1" to_port="input 1"/>
+                          <portSpacing port="source_condition" spacing="0"/>
+                          <portSpacing port="source_input 1" spacing="0"/>
+                          <portSpacing port="source_input 2" spacing="0"/>
+                          <portSpacing port="sink_input 1" spacing="0"/>
+                          <portSpacing port="sink_input 2" spacing="0"/>
+                        </process>
+                        <process expanded="true">
+                          <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Select Attributes (4)" origin="GENERATED_MODELOPS" width="90" x="112" y="34">
+                            <parameter key="attribute_filter_type" value="single"/>
+                            <parameter key="attribute" value="%{loop_attribute}_month_of_year"/>
+                            <parameter key="attributes" value=""/>
+                            <parameter key="use_except_expression" value="false"/>
+                            <parameter key="value_type" value="attribute_value"/>
+                            <parameter key="use_value_type_exception" value="false"/>
+                            <parameter key="except_value_type" value="time"/>
+                            <parameter key="block_type" value="attribute_block"/>
+                            <parameter key="use_block_type_exception" value="false"/>
+                            <parameter key="except_block_type" value="value_matrix_row_start"/>
+                            <parameter key="invert_selection" value="true"/>
+                            <parameter key="include_special_attributes" value="false"/>
+                          </operator>
+                          <connect from_port="input 1" to_op="Select Attributes (4)" to_port="example set input"/>
+                          <connect from_op="Select Attributes (4)" from_port="example set output" to_port="input 1"/>
+                          <portSpacing port="source_condition" spacing="0"/>
+                          <portSpacing port="source_input 1" spacing="0"/>
+                          <portSpacing port="source_input 2" spacing="0"/>
+                          <portSpacing port="sink_input 1" spacing="0"/>
+                          <portSpacing port="sink_input 2" spacing="0"/>
+                        </process>
+                      </operator>
+                      <operator activated="true" class="date_to_numerical" compatibility="9.5.001" expanded="true" height="82" name="Extract Year" origin="GENERATED_MODELOPS" width="90" x="45" y="340">
+                        <parameter key="attribute_name" value="%{loop_attribute}"/>
+                        <parameter key="time_unit" value="year"/>
+                        <parameter key="millisecond_relative_to" value="second"/>
+                        <parameter key="second_relative_to" value="minute"/>
+                        <parameter key="minute_relative_to" value="hour"/>
+                        <parameter key="hour_relative_to" value="day"/>
+                        <parameter key="day_relative_to" value="month"/>
+                        <parameter key="week_relative_to" value="year"/>
+                        <parameter key="month_relative_to" value="year"/>
+                        <parameter key="quarter_relative_to" value="year"/>
+                        <parameter key="half_year_relative_to" value="year"/>
+                        <parameter key="year_relative_to" value="era"/>
+                        <parameter key="keep_old_attribute" value="true"/>
+                      </operator>
+                      <operator activated="true" class="date_to_numerical" compatibility="9.5.001" expanded="true" height="82" name="Extract Quarter" origin="GENERATED_MODELOPS" width="90" x="45" y="493">
+                        <parameter key="attribute_name" value="%{loop_attribute}"/>
+                        <parameter key="time_unit" value="quarter"/>
+                        <parameter key="millisecond_relative_to" value="second"/>
+                        <parameter key="second_relative_to" value="minute"/>
+                        <parameter key="minute_relative_to" value="hour"/>
+                        <parameter key="hour_relative_to" value="day"/>
+                        <parameter key="day_relative_to" value="month"/>
+                        <parameter key="week_relative_to" value="year"/>
+                        <parameter key="month_relative_to" value="year"/>
+                        <parameter key="quarter_relative_to" value="year"/>
+                        <parameter key="half_year_relative_to" value="year"/>
+                        <parameter key="year_relative_to" value="era"/>
+                        <parameter key="keep_old_attribute" value="true"/>
+                      </operator>
+                      <operator activated="true" class="aggregate" compatibility="9.5.001" expanded="true" height="82" name="Aggregate Q" origin="GENERATED_MODELOPS" width="90" x="179" y="493">
+                        <parameter key="use_default_aggregation" value="false"/>
+                        <parameter key="attribute_filter_type" value="all"/>
+                        <parameter key="attribute" value=""/>
+                        <parameter key="attributes" value=""/>
+                        <parameter key="use_except_expression" value="false"/>
+                        <parameter key="value_type" value="attribute_value"/>
+                        <parameter key="use_value_type_exception" value="false"/>
+                        <parameter key="except_value_type" value="time"/>
+                        <parameter key="block_type" value="attribute_block"/>
+                        <parameter key="use_block_type_exception" value="false"/>
+                        <parameter key="except_block_type" value="value_matrix_row_start"/>
+                        <parameter key="invert_selection" value="false"/>
+                        <parameter key="include_special_attributes" value="false"/>
+                        <parameter key="default_aggregation_function" value="average"/>
+                        <list key="aggregation_attributes">
+                          <parameter key="%{loop_attribute}_quarter" value="count"/>
+                        </list>
+                        <parameter key="group_by_attributes" value="%{loop_attribute}_quarter"/>
+                        <parameter key="count_all_combinations" value="false"/>
+                        <parameter key="only_distinct" value="false"/>
+                        <parameter key="ignore_missings" value="true"/>
+                      </operator>
+                      <operator activated="true" class="extract_macro" compatibility="9.5.001" expanded="true" height="68" name="Extract Q Rows" origin="GENERATED_MODELOPS" width="90" x="313" y="493">
+                        <parameter key="macro" value="q_rows"/>
+                        <parameter key="macro_type" value="number_of_examples"/>
+                        <parameter key="statistics" value="average"/>
+                        <parameter key="attribute_name" value="maximum(count(%{date_attribute}_day_of_month))"/>
+                        <parameter key="example_index" value="1"/>
+                        <list key="additional_macros"/>
+                      </operator>
+                      <operator activated="true" class="branch" compatibility="9.5.001" expanded="true" height="103" name="Branch (5)" origin="GENERATED_MODELOPS" width="90" x="447" y="493">
+                        <parameter key="condition_type" value="expression"/>
+                        <parameter key="expression" value="if(eval(%{q_rows})&lt;4,FALSE,TRUE)"/>
+                        <parameter key="io_object" value="ANOVAMatrix"/>
+                        <parameter key="return_inner_output" value="true"/>
+                        <process expanded="true">
+                          <connect from_port="input 1" to_port="input 1"/>
+                          <portSpacing port="source_condition" spacing="0"/>
+                          <portSpacing port="source_input 1" spacing="0"/>
+                          <portSpacing port="source_input 2" spacing="0"/>
+                          <portSpacing port="sink_input 1" spacing="0"/>
+                          <portSpacing port="sink_input 2" spacing="0"/>
+                        </process>
+                        <process expanded="true">
+                          <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Select Attributes (5)" origin="GENERATED_MODELOPS" width="90" x="112" y="34">
+                            <parameter key="attribute_filter_type" value="single"/>
+                            <parameter key="attribute" value="%{loop_attribute}_quarter"/>
+                            <parameter key="attributes" value=""/>
+                            <parameter key="use_except_expression" value="false"/>
+                            <parameter key="value_type" value="attribute_value"/>
+                            <parameter key="use_value_type_exception" value="false"/>
+                            <parameter key="except_value_type" value="time"/>
+                            <parameter key="block_type" value="attribute_block"/>
+                            <parameter key="use_block_type_exception" value="false"/>
+                            <parameter key="except_block_type" value="value_matrix_row_start"/>
+                            <parameter key="invert_selection" value="true"/>
+                            <parameter key="include_special_attributes" value="false"/>
+                          </operator>
+                          <connect from_port="input 1" to_op="Select Attributes (5)" to_port="example set input"/>
+                          <connect from_op="Select Attributes (5)" from_port="example set output" to_port="input 1"/>
+                          <portSpacing port="source_condition" spacing="0"/>
+                          <portSpacing port="source_input 1" spacing="0"/>
+                          <portSpacing port="source_input 2" spacing="0"/>
+                          <portSpacing port="sink_input 1" spacing="0"/>
+                          <portSpacing port="sink_input 2" spacing="0"/>
+                        </process>
+                      </operator>
+                      <operator activated="true" class="date_to_numerical" compatibility="9.5.001" expanded="true" height="82" name="Extract Half" origin="GENERATED_MODELOPS" width="90" x="45" y="646">
+                        <parameter key="attribute_name" value="%{loop_attribute}"/>
+                        <parameter key="time_unit" value="half year"/>
+                        <parameter key="millisecond_relative_to" value="second"/>
+                        <parameter key="second_relative_to" value="minute"/>
+                        <parameter key="minute_relative_to" value="hour"/>
+                        <parameter key="hour_relative_to" value="day"/>
+                        <parameter key="day_relative_to" value="month"/>
+                        <parameter key="week_relative_to" value="year"/>
+                        <parameter key="month_relative_to" value="year"/>
+                        <parameter key="quarter_relative_to" value="year"/>
+                        <parameter key="half_year_relative_to" value="year"/>
+                        <parameter key="year_relative_to" value="era"/>
+                        <parameter key="keep_old_attribute" value="true"/>
+                      </operator>
+                      <operator activated="true" class="aggregate" compatibility="9.5.001" expanded="true" height="82" name="Aggregate Half" origin="GENERATED_MODELOPS" width="90" x="179" y="646">
+                        <parameter key="use_default_aggregation" value="false"/>
+                        <parameter key="attribute_filter_type" value="all"/>
+                        <parameter key="attribute" value=""/>
+                        <parameter key="attributes" value=""/>
+                        <parameter key="use_except_expression" value="false"/>
+                        <parameter key="value_type" value="attribute_value"/>
+                        <parameter key="use_value_type_exception" value="false"/>
+                        <parameter key="except_value_type" value="time"/>
+                        <parameter key="block_type" value="attribute_block"/>
+                        <parameter key="use_block_type_exception" value="false"/>
+                        <parameter key="except_block_type" value="value_matrix_row_start"/>
+                        <parameter key="invert_selection" value="false"/>
+                        <parameter key="include_special_attributes" value="false"/>
+                        <parameter key="default_aggregation_function" value="average"/>
+                        <list key="aggregation_attributes">
+                          <parameter key="%{loop_attribute}_half year" value="count"/>
+                        </list>
+                        <parameter key="group_by_attributes" value="%{loop_attribute}_half year"/>
+                        <parameter key="count_all_combinations" value="false"/>
+                        <parameter key="only_distinct" value="false"/>
+                        <parameter key="ignore_missings" value="true"/>
+                      </operator>
+                      <operator activated="true" class="extract_macro" compatibility="9.5.001" expanded="true" height="68" name="Extract Half Rows" origin="GENERATED_MODELOPS" width="90" x="313" y="646">
+                        <parameter key="macro" value="half_rows"/>
+                        <parameter key="macro_type" value="number_of_examples"/>
+                        <parameter key="statistics" value="average"/>
+                        <parameter key="attribute_name" value="maximum(count(%{date_attribute}_day_of_month))"/>
+                        <parameter key="example_index" value="1"/>
+                        <list key="additional_macros"/>
+                      </operator>
+                      <operator activated="true" class="branch" compatibility="9.5.001" expanded="true" height="103" name="Branch (7)" origin="GENERATED_MODELOPS" width="90" x="447" y="646">
+                        <parameter key="condition_type" value="expression"/>
+                        <parameter key="expression" value="if(eval(%{half_rows})&lt;2,FALSE,TRUE)"/>
+                        <parameter key="io_object" value="ANOVAMatrix"/>
+                        <parameter key="return_inner_output" value="true"/>
+                        <process expanded="true">
+                          <connect from_port="input 1" to_port="input 1"/>
+                          <portSpacing port="source_condition" spacing="0"/>
+                          <portSpacing port="source_input 1" spacing="0"/>
+                          <portSpacing port="source_input 2" spacing="0"/>
+                          <portSpacing port="sink_input 1" spacing="0"/>
+                          <portSpacing port="sink_input 2" spacing="0"/>
+                        </process>
+                        <process expanded="true">
+                          <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Select Attributes (8)" origin="GENERATED_MODELOPS" width="90" x="112" y="34">
+                            <parameter key="attribute_filter_type" value="single"/>
+                            <parameter key="attribute" value="%{loop_attribute}_half year"/>
+                            <parameter key="attributes" value=""/>
+                            <parameter key="use_except_expression" value="false"/>
+                            <parameter key="value_type" value="attribute_value"/>
+                            <parameter key="use_value_type_exception" value="false"/>
+                            <parameter key="except_value_type" value="time"/>
+                            <parameter key="block_type" value="attribute_block"/>
+                            <parameter key="use_block_type_exception" value="false"/>
+                            <parameter key="except_block_type" value="value_matrix_row_start"/>
+                            <parameter key="invert_selection" value="true"/>
+                            <parameter key="include_special_attributes" value="false"/>
+                          </operator>
+                          <connect from_port="input 1" to_op="Select Attributes (8)" to_port="example set input"/>
+                          <connect from_op="Select Attributes (8)" from_port="example set output" to_port="input 1"/>
+                          <portSpacing port="source_condition" spacing="0"/>
+                          <portSpacing port="source_input 1" spacing="0"/>
+                          <portSpacing port="source_input 2" spacing="0"/>
+                          <portSpacing port="sink_input 1" spacing="0"/>
+                          <portSpacing port="sink_input 2" spacing="0"/>
+                        </process>
+                      </operator>
+                      <operator activated="true" class="date_to_numerical" compatibility="9.5.001" expanded="true" height="82" name="Extract Day of Week" origin="GENERATED_MODELOPS" width="90" x="45" y="799">
+                        <parameter key="attribute_name" value="%{loop_attribute}"/>
+                        <parameter key="time_unit" value="day"/>
+                        <parameter key="millisecond_relative_to" value="second"/>
+                        <parameter key="second_relative_to" value="minute"/>
+                        <parameter key="minute_relative_to" value="hour"/>
+                        <parameter key="hour_relative_to" value="day"/>
+                        <parameter key="day_relative_to" value="week"/>
+                        <parameter key="week_relative_to" value="year"/>
+                        <parameter key="month_relative_to" value="year"/>
+                        <parameter key="quarter_relative_to" value="year"/>
+                        <parameter key="half_year_relative_to" value="year"/>
+                        <parameter key="year_relative_to" value="era"/>
+                        <parameter key="keep_old_attribute" value="true"/>
+                      </operator>
+                      <operator activated="true" class="rename" compatibility="9.5.001" expanded="true" height="82" name="Rename DoW" origin="GENERATED_MODELOPS" width="90" x="179" y="799">
+                        <parameter key="old_name" value="%{loop_attribute}_day"/>
+                        <parameter key="new_name" value="%{loop_attribute}_day_of_week"/>
+                        <list key="rename_additional_attributes"/>
+                      </operator>
+                      <operator activated="true" class="aggregate" compatibility="9.5.001" expanded="true" height="82" name="Aggregate DoW" origin="GENERATED_MODELOPS" width="90" x="313" y="799">
+                        <parameter key="use_default_aggregation" value="false"/>
+                        <parameter key="attribute_filter_type" value="all"/>
+                        <parameter key="attribute" value=""/>
+                        <parameter key="attributes" value=""/>
+                        <parameter key="use_except_expression" value="false"/>
+                        <parameter key="value_type" value="attribute_value"/>
+                        <parameter key="use_value_type_exception" value="false"/>
+                        <parameter key="except_value_type" value="time"/>
+                        <parameter key="block_type" value="attribute_block"/>
+                        <parameter key="use_block_type_exception" value="false"/>
+                        <parameter key="except_block_type" value="value_matrix_row_start"/>
+                        <parameter key="invert_selection" value="false"/>
+                        <parameter key="include_special_attributes" value="false"/>
+                        <parameter key="default_aggregation_function" value="average"/>
+                        <list key="aggregation_attributes">
+                          <parameter key="%{loop_attribute}_day_of_week" value="count"/>
+                        </list>
+                        <parameter key="group_by_attributes" value="%{loop_attribute}_day_of_week"/>
+                        <parameter key="count_all_combinations" value="false"/>
+                        <parameter key="only_distinct" value="false"/>
+                        <parameter key="ignore_missings" value="true"/>
+                      </operator>
+                      <operator activated="true" class="extract_macro" compatibility="9.5.001" expanded="true" height="68" name="Extract DoW Rows" origin="GENERATED_MODELOPS" width="90" x="447" y="799">
+                        <parameter key="macro" value="dow_rows"/>
+                        <parameter key="macro_type" value="number_of_examples"/>
+                        <parameter key="statistics" value="average"/>
+                        <parameter key="attribute_name" value="maximum(count(%{date_attribute}_day_of_month))"/>
+                        <parameter key="example_index" value="1"/>
+                        <list key="additional_macros"/>
+                      </operator>
+                      <operator activated="true" class="branch" compatibility="9.5.001" expanded="true" height="103" name="Branch (6)" origin="GENERATED_MODELOPS" width="90" x="581" y="799">
+                        <parameter key="condition_type" value="expression"/>
+                        <parameter key="expression" value="if(eval(%{dow_rows})&lt;7,FALSE,TRUE)"/>
+                        <parameter key="io_object" value="ANOVAMatrix"/>
+                        <parameter key="return_inner_output" value="true"/>
+                        <process expanded="true">
+                          <connect from_port="input 1" to_port="input 1"/>
+                          <portSpacing port="source_condition" spacing="0"/>
+                          <portSpacing port="source_input 1" spacing="0"/>
+                          <portSpacing port="source_input 2" spacing="0"/>
+                          <portSpacing port="sink_input 1" spacing="0"/>
+                          <portSpacing port="sink_input 2" spacing="0"/>
+                        </process>
+                        <process expanded="true">
+                          <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Select Attributes (6)" origin="GENERATED_MODELOPS" width="90" x="112" y="34">
+                            <parameter key="attribute_filter_type" value="single"/>
+                            <parameter key="attribute" value="%{loop_attribute}_day_of_week"/>
+                            <parameter key="attributes" value=""/>
+                            <parameter key="use_except_expression" value="false"/>
+                            <parameter key="value_type" value="attribute_value"/>
+                            <parameter key="use_value_type_exception" value="false"/>
+                            <parameter key="except_value_type" value="time"/>
+                            <parameter key="block_type" value="attribute_block"/>
+                            <parameter key="use_block_type_exception" value="false"/>
+                            <parameter key="except_block_type" value="value_matrix_row_start"/>
+                            <parameter key="invert_selection" value="true"/>
+                            <parameter key="include_special_attributes" value="false"/>
+                          </operator>
+                          <connect from_port="input 1" to_op="Select Attributes (6)" to_port="example set input"/>
+                          <connect from_op="Select Attributes (6)" from_port="example set output" to_port="input 1"/>
+                          <portSpacing port="source_condition" spacing="0"/>
+                          <portSpacing port="source_input 1" spacing="0"/>
+                          <portSpacing port="source_input 2" spacing="0"/>
+                          <portSpacing port="sink_input 1" spacing="0"/>
+                          <portSpacing port="sink_input 2" spacing="0"/>
+                        </process>
+                      </operator>
+                      <operator activated="true" class="date_to_numerical" compatibility="9.5.001" expanded="true" height="82" name="Extract Month of Quarter" origin="GENERATED_MODELOPS" width="90" x="45" y="952">
+                        <parameter key="attribute_name" value="%{loop_attribute}"/>
+                        <parameter key="time_unit" value="month"/>
+                        <parameter key="millisecond_relative_to" value="second"/>
+                        <parameter key="second_relative_to" value="minute"/>
+                        <parameter key="minute_relative_to" value="hour"/>
+                        <parameter key="hour_relative_to" value="day"/>
+                        <parameter key="day_relative_to" value="week"/>
+                        <parameter key="week_relative_to" value="month"/>
+                        <parameter key="month_relative_to" value="quarter"/>
+                        <parameter key="quarter_relative_to" value="year"/>
+                        <parameter key="half_year_relative_to" value="year"/>
+                        <parameter key="year_relative_to" value="era"/>
+                        <parameter key="keep_old_attribute" value="true"/>
+                      </operator>
+                      <operator activated="true" class="rename" compatibility="9.5.001" expanded="true" height="82" name="Rename MoQ" origin="GENERATED_MODELOPS" width="90" x="179" y="952">
+                        <parameter key="old_name" value="%{loop_attribute}_month"/>
+                        <parameter key="new_name" value="%{loop_attribute}_month_of_quarter"/>
+                        <list key="rename_additional_attributes"/>
+                      </operator>
+                      <operator activated="true" class="aggregate" compatibility="9.5.001" expanded="true" height="82" name="Aggregate MoQ" origin="GENERATED_MODELOPS" width="90" x="313" y="952">
+                        <parameter key="use_default_aggregation" value="false"/>
+                        <parameter key="attribute_filter_type" value="all"/>
+                        <parameter key="attribute" value=""/>
+                        <parameter key="attributes" value=""/>
+                        <parameter key="use_except_expression" value="false"/>
+                        <parameter key="value_type" value="attribute_value"/>
+                        <parameter key="use_value_type_exception" value="false"/>
+                        <parameter key="except_value_type" value="time"/>
+                        <parameter key="block_type" value="attribute_block"/>
+                        <parameter key="use_block_type_exception" value="false"/>
+                        <parameter key="except_block_type" value="value_matrix_row_start"/>
+                        <parameter key="invert_selection" value="false"/>
+                        <parameter key="include_special_attributes" value="false"/>
+                        <parameter key="default_aggregation_function" value="average"/>
+                        <list key="aggregation_attributes">
+                          <parameter key="%{loop_attribute}_month_of_quarter" value="count"/>
+                        </list>
+                        <parameter key="group_by_attributes" value="%{loop_attribute}_month_of_quarter"/>
+                        <parameter key="count_all_combinations" value="false"/>
+                        <parameter key="only_distinct" value="false"/>
+                        <parameter key="ignore_missings" value="true"/>
+                      </operator>
+                      <operator activated="true" class="extract_macro" compatibility="9.5.001" expanded="true" height="68" name="Extract MoQ Rows" origin="GENERATED_MODELOPS" width="90" x="447" y="952">
+                        <parameter key="macro" value="moq_rows"/>
+                        <parameter key="macro_type" value="number_of_examples"/>
+                        <parameter key="statistics" value="average"/>
+                        <parameter key="attribute_name" value="maximum(count(%{date_attribute}_day_of_month))"/>
+                        <parameter key="example_index" value="1"/>
+                        <list key="additional_macros"/>
+                      </operator>
+                      <operator activated="true" class="branch" compatibility="9.5.001" expanded="true" height="103" name="Branch (8)" origin="GENERATED_MODELOPS" width="90" x="581" y="952">
+                        <parameter key="condition_type" value="expression"/>
+                        <parameter key="expression" value="if(eval(%{moq_rows})&lt;3,FALSE,TRUE)"/>
+                        <parameter key="io_object" value="ANOVAMatrix"/>
+                        <parameter key="return_inner_output" value="true"/>
+                        <process expanded="true">
+                          <connect from_port="input 1" to_port="input 1"/>
+                          <portSpacing port="source_condition" spacing="0"/>
+                          <portSpacing port="source_input 1" spacing="0"/>
+                          <portSpacing port="source_input 2" spacing="0"/>
+                          <portSpacing port="sink_input 1" spacing="0"/>
+                          <portSpacing port="sink_input 2" spacing="0"/>
+                        </process>
+                        <process expanded="true">
+                          <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Select Attributes (7)" origin="GENERATED_MODELOPS" width="90" x="112" y="34">
+                            <parameter key="attribute_filter_type" value="single"/>
+                            <parameter key="attribute" value="%{loop_attribute}_month_of_quarter"/>
+                            <parameter key="attributes" value=""/>
+                            <parameter key="use_except_expression" value="false"/>
+                            <parameter key="value_type" value="attribute_value"/>
+                            <parameter key="use_value_type_exception" value="false"/>
+                            <parameter key="except_value_type" value="time"/>
+                            <parameter key="block_type" value="attribute_block"/>
+                            <parameter key="use_block_type_exception" value="false"/>
+                            <parameter key="except_block_type" value="value_matrix_row_start"/>
+                            <parameter key="invert_selection" value="true"/>
+                            <parameter key="include_special_attributes" value="false"/>
+                          </operator>
+                          <connect from_port="input 1" to_op="Select Attributes (7)" to_port="example set input"/>
+                          <connect from_op="Select Attributes (7)" from_port="example set output" to_port="input 1"/>
+                          <portSpacing port="source_condition" spacing="0"/>
+                          <portSpacing port="source_input 1" spacing="0"/>
+                          <portSpacing port="source_input 2" spacing="0"/>
+                          <portSpacing port="sink_input 1" spacing="0"/>
+                          <portSpacing port="sink_input 2" spacing="0"/>
+                        </process>
+                      </operator>
+                      <operator activated="true" class="date_to_numerical" compatibility="9.5.001" expanded="true" height="82" name="Extract Hour" origin="GENERATED_MODELOPS" width="90" x="45" y="1105">
+                        <parameter key="attribute_name" value="%{loop_attribute}"/>
+                        <parameter key="time_unit" value="hour"/>
+                        <parameter key="millisecond_relative_to" value="second"/>
+                        <parameter key="second_relative_to" value="minute"/>
+                        <parameter key="minute_relative_to" value="hour"/>
+                        <parameter key="hour_relative_to" value="day"/>
+                        <parameter key="day_relative_to" value="week"/>
+                        <parameter key="week_relative_to" value="month"/>
+                        <parameter key="month_relative_to" value="quarter"/>
+                        <parameter key="quarter_relative_to" value="year"/>
+                        <parameter key="half_year_relative_to" value="year"/>
+                        <parameter key="year_relative_to" value="era"/>
+                        <parameter key="keep_old_attribute" value="true"/>
+                      </operator>
+                      <operator activated="true" class="date_to_numerical" compatibility="9.5.001" expanded="true" height="82" name="Extract Minute" origin="GENERATED_MODELOPS" width="90" x="45" y="1258">
+                        <parameter key="attribute_name" value="%{loop_attribute}"/>
+                        <parameter key="time_unit" value="minute"/>
+                        <parameter key="millisecond_relative_to" value="second"/>
+                        <parameter key="second_relative_to" value="minute"/>
+                        <parameter key="minute_relative_to" value="hour"/>
+                        <parameter key="hour_relative_to" value="day"/>
+                        <parameter key="day_relative_to" value="week"/>
+                        <parameter key="week_relative_to" value="month"/>
+                        <parameter key="month_relative_to" value="quarter"/>
+                        <parameter key="quarter_relative_to" value="year"/>
+                        <parameter key="half_year_relative_to" value="year"/>
+                        <parameter key="year_relative_to" value="era"/>
+                        <parameter key="keep_old_attribute" value="true"/>
+                      </operator>
+                      <operator activated="true" class="date_to_numerical" compatibility="9.5.001" expanded="true" height="82" name="Extract Second" origin="GENERATED_MODELOPS" width="90" x="45" y="1411">
+                        <parameter key="attribute_name" value="%{loop_attribute}"/>
+                        <parameter key="time_unit" value="second"/>
+                        <parameter key="millisecond_relative_to" value="second"/>
+                        <parameter key="second_relative_to" value="minute"/>
+                        <parameter key="minute_relative_to" value="hour"/>
+                        <parameter key="hour_relative_to" value="day"/>
+                        <parameter key="day_relative_to" value="week"/>
+                        <parameter key="week_relative_to" value="month"/>
+                        <parameter key="month_relative_to" value="quarter"/>
+                        <parameter key="quarter_relative_to" value="year"/>
+                        <parameter key="half_year_relative_to" value="year"/>
+                        <parameter key="year_relative_to" value="era"/>
+                        <parameter key="keep_old_attribute" value="true"/>
+                      </operator>
+                      <operator activated="true" class="date_to_numerical" compatibility="9.5.001" expanded="true" height="82" name="Extract Millisecond" origin="GENERATED_MODELOPS" width="90" x="45" y="1564">
+                        <parameter key="attribute_name" value="%{loop_attribute}"/>
+                        <parameter key="time_unit" value="millisecond"/>
+                        <parameter key="millisecond_relative_to" value="second"/>
+                        <parameter key="second_relative_to" value="minute"/>
+                        <parameter key="minute_relative_to" value="hour"/>
+                        <parameter key="hour_relative_to" value="day"/>
+                        <parameter key="day_relative_to" value="week"/>
+                        <parameter key="week_relative_to" value="month"/>
+                        <parameter key="month_relative_to" value="quarter"/>
+                        <parameter key="quarter_relative_to" value="year"/>
+                        <parameter key="half_year_relative_to" value="year"/>
+                        <parameter key="year_relative_to" value="era"/>
+                        <parameter key="keep_old_attribute" value="true"/>
+                      </operator>
+                      <operator activated="true" class="select_attributes" compatibility="9.5.001" expanded="true" height="82" name="Remove Original Date" origin="GENERATED_MODELOPS" width="90" x="45" y="1717">
+                        <parameter key="attribute_filter_type" value="single"/>
+                        <parameter key="attribute" value="%{loop_attribute}"/>
+                        <parameter key="attributes" value=""/>
+                        <parameter key="use_except_expression" value="false"/>
+                        <parameter key="value_type" value="attribute_value"/>
+                        <parameter key="use_value_type_exception" value="false"/>
+                        <parameter key="except_value_type" value="time"/>
+                        <parameter key="block_type" value="attribute_block"/>
+                        <parameter key="use_block_type_exception" value="false"/>
+                        <parameter key="except_block_type" value="value_matrix_row_start"/>
+                        <parameter key="invert_selection" value="true"/>
+                        <parameter key="include_special_attributes" value="false"/>
+                      </operator>
+                      <operator activated="true" class="work_on_subset" compatibility="9.5.001" expanded="true" height="82" name="Remove Constant Numericals (2)" origin="GENERATED_MODELOPS" width="90" x="45" y="1870">
+                        <parameter key="attribute_filter_type" value="regular_expression"/>
+                        <parameter key="attribute" value="%{loop_attribute}_year"/>
+                        <parameter key="attributes" value=""/>
+                        <parameter key="regular_expression" value="%{loop_attribute}_.*"/>
+                        <parameter key="use_except_expression" value="false"/>
+                        <parameter key="value_type" value="numeric"/>
+                        <parameter key="use_value_type_exception" value="false"/>
+                        <parameter key="except_value_type" value="time"/>
+                        <parameter key="block_type" value="attribute_block"/>
+                        <parameter key="use_block_type_exception" value="false"/>
+                        <parameter key="except_block_type" value="value_matrix_row_start"/>
+                        <parameter key="invert_selection" value="false"/>
+                        <parameter key="include_special_attributes" value="false"/>
+                        <parameter key="name_conflict_handling" value="error"/>
+                        <parameter key="role_conflict_handling" value="error"/>
+                        <parameter key="keep_subset_only" value="false"/>
+                        <parameter key="deliver_inner_results" value="false"/>
+                        <parameter key="remove_roles" value="false"/>
+                        <process expanded="true">
+                          <operator activated="true" class="remove_useless_attributes" compatibility="9.5.001" expanded="true" height="82" name="Remove Constants (2)" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                            <parameter key="numerical_min_deviation" value="0.0"/>
+                            <parameter key="nominal_useless_above" value="1.0"/>
+                            <parameter key="nominal_remove_id_like" value="false"/>
+                            <parameter key="nominal_useless_below" value="0.0"/>
+                          </operator>
+                          <connect from_port="exampleSet" to_op="Remove Constants (2)" to_port="example set input"/>
+                          <connect from_op="Remove Constants (2)" from_port="example set output" to_port="example set"/>
+                          <portSpacing port="source_exampleSet" spacing="0"/>
+                          <portSpacing port="sink_example set" spacing="0"/>
+                          <portSpacing port="sink_through 1" spacing="0"/>
+                        </process>
+                      </operator>
+                      <operator activated="true" class="work_on_subset" compatibility="9.5.001" expanded="true" height="82" name="Work on Subset" origin="GENERATED_MODELOPS" width="90" x="45" y="2023">
+                        <parameter key="attribute_filter_type" value="regular_expression"/>
+                        <parameter key="attribute" value=""/>
+                        <parameter key="attributes" value=""/>
+                        <parameter key="regular_expression" value="%{loop_attribute}_.*"/>
+                        <parameter key="use_except_expression" value="true"/>
+                        <parameter key="except_regular_expression" value=".*_day_of_month|.*_year|.*_millisecond|.*_second|.*_minute|.*_hour"/>
+                        <parameter key="value_type" value="attribute_value"/>
+                        <parameter key="use_value_type_exception" value="false"/>
+                        <parameter key="except_value_type" value="time"/>
+                        <parameter key="block_type" value="attribute_block"/>
+                        <parameter key="use_block_type_exception" value="false"/>
+                        <parameter key="except_block_type" value="value_matrix_row_start"/>
+                        <parameter key="invert_selection" value="false"/>
+                        <parameter key="include_special_attributes" value="false"/>
+                        <parameter key="name_conflict_handling" value="error"/>
+                        <parameter key="role_conflict_handling" value="error"/>
+                        <parameter key="keep_subset_only" value="false"/>
+                        <parameter key="deliver_inner_results" value="false"/>
+                        <parameter key="remove_roles" value="false"/>
+                        <process expanded="true">
+                          <operator activated="true" class="numerical_to_polynominal" compatibility="9.5.001" expanded="true" height="82" name="Numerical to Polynominal" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                            <parameter key="attribute_filter_type" value="all"/>
+                            <parameter key="attribute" value=""/>
+                            <parameter key="attributes" value=""/>
+                            <parameter key="use_except_expression" value="false"/>
+                            <parameter key="value_type" value="numeric"/>
+                            <parameter key="use_value_type_exception" value="false"/>
+                            <parameter key="except_value_type" value="real"/>
+                            <parameter key="block_type" value="value_series"/>
+                            <parameter key="use_block_type_exception" value="false"/>
+                            <parameter key="except_block_type" value="value_series_end"/>
+                            <parameter key="invert_selection" value="false"/>
+                            <parameter key="include_special_attributes" value="false"/>
+                          </operator>
+                          <operator activated="true" class="nominal_to_numerical" compatibility="9.5.001" expanded="true" height="103" name="Nominal to Numerical" origin="GENERATED_MODELOPS" width="90" x="179" y="34">
+                            <parameter key="return_preprocessing_model" value="false"/>
+                            <parameter key="create_view" value="false"/>
+                            <parameter key="attribute_filter_type" value="all"/>
+                            <parameter key="attribute" value=""/>
+                            <parameter key="attributes" value=""/>
+                            <parameter key="use_except_expression" value="false"/>
+                            <parameter key="value_type" value="nominal"/>
+                            <parameter key="use_value_type_exception" value="false"/>
+                            <parameter key="except_value_type" value="file_path"/>
+                            <parameter key="block_type" value="single_value"/>
+                            <parameter key="use_block_type_exception" value="false"/>
+                            <parameter key="except_block_type" value="single_value"/>
+                            <parameter key="invert_selection" value="false"/>
+                            <parameter key="include_special_attributes" value="false"/>
+                            <parameter key="coding_type" value="dummy coding"/>
+                            <parameter key="use_comparison_groups" value="false"/>
+                            <list key="comparison_groups"/>
+                            <parameter key="unexpected_value_handling" value="all 0 and warning"/>
+                            <parameter key="use_underscore_in_name" value="false"/>
+                          </operator>
+                          <connect from_port="exampleSet" to_op="Numerical to Polynominal" to_port="example set input"/>
+                          <connect from_op="Numerical to Polynominal" from_port="example set output" to_op="Nominal to Numerical" to_port="example set input"/>
+                          <connect from_op="Nominal to Numerical" from_port="example set output" to_port="example set"/>
+                          <portSpacing port="source_exampleSet" spacing="0"/>
+                          <portSpacing port="sink_example set" spacing="0"/>
+                          <portSpacing port="sink_through 1" spacing="0"/>
+                        </process>
+                      </operator>
+                      <operator activated="true" class="rename_by_replacing" compatibility="9.5.001" expanded="true" height="82" name="Rename by Replacing" origin="GENERATED_MODELOPS" width="90" x="45" y="2176">
+                        <parameter key="attribute_filter_type" value="regular_expression"/>
+                        <parameter key="attribute" value=""/>
+                        <parameter key="attributes" value=""/>
+                        <parameter key="regular_expression" value="%{loop_attribute}_.*"/>
+                        <parameter key="use_except_expression" value="false"/>
+                        <parameter key="value_type" value="attribute_value"/>
+                        <parameter key="use_value_type_exception" value="false"/>
+                        <parameter key="except_value_type" value="time"/>
+                        <parameter key="block_type" value="attribute_block"/>
+                        <parameter key="use_block_type_exception" value="false"/>
+                        <parameter key="except_block_type" value="value_matrix_row_start"/>
+                        <parameter key="invert_selection" value="false"/>
+                        <parameter key="include_special_attributes" value="false"/>
+                        <parameter key="replace_what" value="%{loop_attribute}_(.*)"/>
+                        <parameter key="replace_by" value="%{loop_attribute}:$1"/>
+                      </operator>
+                      <connect from_port="input 1" to_op="Extract Day of Month" to_port="example set input"/>
+                      <connect from_op="Extract Day of Month" from_port="example set output" to_op="Rename DoM" to_port="example set input"/>
+                      <connect from_op="Rename DoM" from_port="example set output" to_op="Aggregate DoM" to_port="example set input"/>
+                      <connect from_op="Aggregate DoM" from_port="example set output" to_op="Extract DoM Rows" to_port="example set"/>
+                      <connect from_op="Aggregate DoM" from_port="original" to_op="Branch (3)" to_port="input 1"/>
+                      <connect from_op="Branch (3)" from_port="input 1" to_op="Extract Month" to_port="example set input"/>
+                      <connect from_op="Extract Month" from_port="example set output" to_op="Rename MoY" to_port="example set input"/>
+                      <connect from_op="Rename MoY" from_port="example set output" to_op="Aggregate MoY" to_port="example set input"/>
+                      <connect from_op="Aggregate MoY" from_port="example set output" to_op="Extract MoY Rows" to_port="example set"/>
+                      <connect from_op="Aggregate MoY" from_port="original" to_op="Branch (4)" to_port="input 1"/>
+                      <connect from_op="Branch (4)" from_port="input 1" to_op="Extract Year" to_port="example set input"/>
+                      <connect from_op="Extract Year" from_port="example set output" to_op="Extract Quarter" to_port="example set input"/>
+                      <connect from_op="Extract Quarter" from_port="example set output" to_op="Aggregate Q" to_port="example set input"/>
+                      <connect from_op="Aggregate Q" from_port="example set output" to_op="Extract Q Rows" to_port="example set"/>
+                      <connect from_op="Aggregate Q" from_port="original" to_op="Branch (5)" to_port="input 1"/>
+                      <connect from_op="Branch (5)" from_port="input 1" to_op="Extract Half" to_port="example set input"/>
+                      <connect from_op="Extract Half" from_port="example set output" to_op="Aggregate Half" to_port="example set input"/>
+                      <connect from_op="Aggregate Half" from_port="example set output" to_op="Extract Half Rows" to_port="example set"/>
+                      <connect from_op="Aggregate Half" from_port="original" to_op="Branch (7)" to_port="input 1"/>
+                      <connect from_op="Branch (7)" from_port="input 1" to_op="Extract Day of Week" to_port="example set input"/>
+                      <connect from_op="Extract Day of Week" from_port="example set output" to_op="Rename DoW" to_port="example set input"/>
+                      <connect from_op="Rename DoW" from_port="example set output" to_op="Aggregate DoW" to_port="example set input"/>
+                      <connect from_op="Aggregate DoW" from_port="example set output" to_op="Extract DoW Rows" to_port="example set"/>
+                      <connect from_op="Aggregate DoW" from_port="original" to_op="Branch (6)" to_port="input 1"/>
+                      <connect from_op="Branch (6)" from_port="input 1" to_op="Extract Month of Quarter" to_port="example set input"/>
+                      <connect from_op="Extract Month of Quarter" from_port="example set output" to_op="Rename MoQ" to_port="example set input"/>
+                      <connect from_op="Rename MoQ" from_port="example set output" to_op="Aggregate MoQ" to_port="example set input"/>
+                      <connect from_op="Aggregate MoQ" from_port="example set output" to_op="Extract MoQ Rows" to_port="example set"/>
+                      <connect from_op="Aggregate MoQ" from_port="original" to_op="Branch (8)" to_port="input 1"/>
+                      <connect from_op="Branch (8)" from_port="input 1" to_op="Extract Hour" to_port="example set input"/>
+                      <connect from_op="Extract Hour" from_port="example set output" to_op="Extract Minute" to_port="example set input"/>
+                      <connect from_op="Extract Minute" from_port="example set output" to_op="Extract Second" to_port="example set input"/>
+                      <connect from_op="Extract Second" from_port="example set output" to_op="Extract Millisecond" to_port="example set input"/>
+                      <connect from_op="Extract Millisecond" from_port="example set output" to_op="Remove Original Date" to_port="example set input"/>
+                      <connect from_op="Remove Original Date" from_port="example set output" to_op="Remove Constant Numericals (2)" to_port="example set"/>
+                      <connect from_op="Remove Constant Numericals (2)" from_port="example set" to_op="Work on Subset" to_port="example set"/>
+                      <connect from_op="Work on Subset" from_port="example set" to_op="Rename by Replacing" to_port="example set input"/>
+                      <connect from_op="Rename by Replacing" from_port="example set output" to_port="output 1"/>
+                      <portSpacing port="source_input 1" spacing="0"/>
+                      <portSpacing port="source_input 2" spacing="0"/>
+                      <portSpacing port="sink_output 1" spacing="0"/>
+                      <portSpacing port="sink_output 2" spacing="0"/>
+                      <description align="left" color="blue" colored="true" height="50" resized="false" width="254" x="757" y="61">&amp;lt;- Extract Day of Month</description>
+                      <description align="left" color="blue" colored="true" height="50" resized="false" width="254" x="753" y="215">&amp;lt;- Extract Month of Year</description>
+                      <description align="left" color="blue" colored="true" height="50" resized="false" width="254" x="754" y="365">&amp;lt;- Extract Year</description>
+                      <description align="left" color="blue" colored="true" height="50" resized="false" width="254" x="754" y="517">&amp;lt;- Extract Quarter of Year</description>
+                      <description align="left" color="blue" colored="true" height="50" resized="false" width="254" x="757" y="683">&amp;lt;- Extract Half of the Year</description>
+                      <description align="left" color="blue" colored="true" height="50" resized="false" width="254" x="759" y="834">&amp;lt;- Extract Day of Week</description>
+                      <description align="left" color="blue" colored="true" height="50" resized="false" width="254" x="757" y="979">&amp;lt;- Extract Month of Quarter</description>
+                      <description align="left" color="blue" colored="true" height="50" resized="false" width="254" x="210" y="1129">&amp;lt;- Extract Time Features</description>
+                      <description align="left" color="blue" colored="true" height="50" resized="false" width="254" x="216" y="1744">&amp;lt;- Remove original date column</description>
+                      <description align="left" color="blue" colored="true" height="50" resized="false" width="254" x="215" y="1885">&amp;lt;- Remove all constant columns (e.g. because all in the same month)</description>
+                      <description align="left" color="blue" colored="true" height="50" resized="false" width="254" x="214" y="2045">&amp;lt;- Transform all remaining date / time features into binary numerical ones</description>
+                      <description align="left" color="blue" colored="true" height="50" resized="false" width="254" x="211" y="2145">&amp;lt;- Rename all generated date attributes with a color instead of an underscore.</description>
+                    </process>
+                    <description align="center" color="transparent" colored="false" width="126">Loop over the date columns. We needed the check and branch before since otherwise this loop will fail.</description>
+                  </operator>
+                  <connect from_port="input 1" to_op="Create Today Column" to_port="example set input"/>
+                  <connect from_op="Create Today Column" from_port="example set output" to_op="Differences Loop 1" to_port="input 1"/>
+                  <connect from_op="Differences Loop 1" from_port="output 1" to_op="Remove Today Column" to_port="example set input"/>
+                  <connect from_op="Remove Today Column" from_port="example set output" to_op="Extraction Loop" to_port="input 1"/>
+                  <connect from_op="Extraction Loop" from_port="output 1" to_port="input 1"/>
+                  <portSpacing port="source_condition" spacing="0"/>
+                  <portSpacing port="source_input 1" spacing="0"/>
+                  <portSpacing port="source_input 2" spacing="0"/>
+                  <portSpacing port="sink_input 1" spacing="0"/>
+                  <portSpacing port="sink_input 2" spacing="0"/>
+                </process>
+                <process expanded="true">
+                  <connect from_port="input 1" to_port="input 1"/>
+                  <portSpacing port="source_condition" spacing="0"/>
+                  <portSpacing port="source_input 1" spacing="0"/>
+                  <portSpacing port="source_input 2" spacing="0"/>
+                  <portSpacing port="sink_input 1" spacing="0"/>
+                  <portSpacing port="sink_input 2" spacing="0"/>
+                  <description align="left" color="orange" colored="true" height="50" resized="false" width="369" x="35" y="143">Do nothing if there are no date columns in the data table.</description>
+                </process>
+                <description align="center" color="transparent" colored="false" width="126">If there are any date columns in the data, work on them inside of this Branch operator.</description>
+              </operator>
+              <connect from_port="input 1" to_op="Select Date Attributes" to_port="example set input"/>
+              <connect from_op="Select Date Attributes" from_port="example set output" to_op="Branch if Dates" to_port="condition"/>
+              <connect from_op="Select Date Attributes" from_port="original" to_op="Branch if Dates" to_port="input 1"/>
+              <connect from_op="Branch if Dates" from_port="input 1" to_port="output 1"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="source_input 2" spacing="0"/>
+              <portSpacing port="sink_output 1" spacing="0"/>
+              <portSpacing port="sink_output 2" spacing="0"/>
+            </process>
+            <description align="center" color="transparent" colored="false" width="126">Should handle dates?</description>
+          </operator>
+          <operator activated="true" class="subprocess" compatibility="9.5.001" expanded="true" height="82" name="Unify Value Types" origin="GENERATED_MODELOPS" width="90" x="983" y="34">
+            <process expanded="true">
+              <operator activated="true" class="remove_unused_values" compatibility="9.5.001" expanded="true" height="103" name="Remove Unused Values" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                <parameter key="return_preprocessing_model" value="false"/>
+                <parameter key="create_view" value="false"/>
+                <parameter key="attribute_filter_type" value="value_type"/>
+                <parameter key="attribute" value=""/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="nominal"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="file_path"/>
+                <parameter key="block_type" value="single_value"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="single_value"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="false"/>
+                <parameter key="sort_alphabetically" value="true"/>
+                <description align="center" color="transparent" colored="false" width="126">Remove all unused values so that they are not shown by models and do not change calculations based on the number of values in the data. Also order the value mappings alphabetically.</description>
+              </operator>
+              <operator activated="true" class="nominal_to_text" compatibility="9.5.001" expanded="true" height="82" name="Nominal to Text" origin="GENERATED_MODELOPS" width="90" x="179" y="34">
+                <parameter key="attribute_filter_type" value="value_type"/>
+                <parameter key="attribute" value=""/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="nominal"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="file_path"/>
+                <parameter key="block_type" value="single_value"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="single_value"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="true"/>
+                <description align="center" color="transparent" colored="false" width="126">Transform all nominal columns to text so that we make sure that all will have polynominal type after the next transformation.</description>
+              </operator>
+              <operator activated="true" class="text_to_nominal" compatibility="9.5.001" expanded="true" height="82" name="Text to Nominal" origin="GENERATED_MODELOPS" width="90" x="313" y="34">
+                <parameter key="attribute_filter_type" value="value_type"/>
+                <parameter key="attribute" value=""/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="text"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="text"/>
+                <parameter key="block_type" value="value_matrix"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_matrix_row_start"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="true"/>
+                <description align="center" color="transparent" colored="false" width="126">Transform all text columns into polynominal columns.</description>
+              </operator>
+              <operator activated="true" class="numerical_to_real" compatibility="9.5.001" expanded="true" height="82" name="Numerical to Real" origin="GENERATED_MODELOPS" width="90" x="447" y="34">
+                <parameter key="attribute_filter_type" value="value_type"/>
+                <parameter key="attribute" value=""/>
+                <parameter key="attributes" value=""/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="numeric"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="integer"/>
+                <parameter key="block_type" value="value_series"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="value_series_end"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="true"/>
+                <description align="center" color="transparent" colored="false" width="126">Turn all numerical columns (not integers though) into real columns.</description>
+              </operator>
+              <operator activated="true" class="nominal_to_text" compatibility="9.5.001" expanded="true" height="82" name="Set Text Columns" origin="GENERATED_MODELOPS" width="90" x="581" y="34">
+                <parameter key="attribute_filter_type" value="regular_expression"/>
+                <parameter key="attribute" value=""/>
+                <parameter key="attributes" value=""/>
+                <parameter key="regular_expression" value="NO_SELECTED_COLUMN_HERE"/>
+                <parameter key="use_except_expression" value="false"/>
+                <parameter key="value_type" value="nominal"/>
+                <parameter key="use_value_type_exception" value="false"/>
+                <parameter key="except_value_type" value="file_path"/>
+                <parameter key="block_type" value="single_value"/>
+                <parameter key="use_block_type_exception" value="false"/>
+                <parameter key="except_block_type" value="single_value"/>
+                <parameter key="invert_selection" value="false"/>
+                <parameter key="include_special_attributes" value="true"/>
+                <description align="center" color="transparent" colored="false" width="126">Define the value type of all columns which have been identified as text.</description>
+              </operator>
+              <connect from_port="in 1" to_op="Remove Unused Values" to_port="example set input"/>
+              <connect from_op="Remove Unused Values" from_port="example set output" to_op="Nominal to Text" to_port="example set input"/>
+              <connect from_op="Nominal to Text" from_port="example set output" to_op="Text to Nominal" to_port="example set input"/>
+              <connect from_op="Text to Nominal" from_port="example set output" to_op="Numerical to Real" to_port="example set input"/>
+              <connect from_op="Numerical to Real" from_port="example set output" to_op="Set Text Columns" to_port="example set input"/>
+              <connect from_op="Set Text Columns" from_port="example set output" to_port="out 1"/>
+              <portSpacing port="source_in 1" spacing="0"/>
+              <portSpacing port="source_in 2" spacing="0"/>
+              <portSpacing port="sink_out 1" spacing="0"/>
+              <portSpacing port="sink_out 2" spacing="0"/>
+            </process>
+            <description align="center" color="transparent" colored="false" width="126">Unify all value types</description>
+          </operator>
+          <connect from_port="in 1" to_op="Initial Type Unification" to_port="in 1"/>
+          <connect from_op="Initial Type Unification" from_port="out 1" to_op="Change to Regular" to_port="input 1"/>
+          <connect from_op="Change to Regular" from_port="output 1" to_op="Should Discretize?" to_port="input 1"/>
+          <connect from_op="Should Discretize?" from_port="output 1" to_op="Map Values?" to_port="input 1"/>
+          <connect from_op="Map Values?" from_port="output 1" to_op="Positive Class?" to_port="input 1"/>
+          <connect from_op="Positive Class?" from_port="output 1" to_op="Remove Columns?" to_port="input 1"/>
+          <connect from_op="Remove Columns?" from_port="output 1" to_op="Handle Dates?" to_port="input 1"/>
+          <connect from_op="Handle Dates?" from_port="output 1" to_op="Unify Value Types" to_port="in 1"/>
+          <connect from_op="Unify Value Types" from_port="out 1" to_port="out 1"/>
+          <portSpacing port="source_in 1" spacing="0"/>
+          <portSpacing port="source_in 2" spacing="0"/>
+          <portSpacing port="sink_out 1" spacing="0"/>
+          <portSpacing port="sink_out 2" spacing="0"/>
+        </process>
+        <description align="center" color="transparent" colored="false" width="126">All general preprocessing steps (which do not have an effect on validation) happen inside this operator - double click on it to see the details.</description>
+      </operator>
+      <operator activated="true" class="subprocess" compatibility="9.5.001" expanded="true" height="82" name="Add Label and ID" origin="GENERATED_MODELOPS" width="90" x="648" y="289">
+        <process expanded="true">
+          <operator activated="true" class="branch" compatibility="9.5.001" expanded="true" height="82" name="Check ID" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+            <parameter key="condition_type" value="macro_defined"/>
+            <parameter key="condition_value" value="id"/>
+            <parameter key="expression" value=""/>
+            <parameter key="io_object" value="ANOVAMatrix"/>
+            <parameter key="return_inner_output" value="true"/>
+            <process expanded="true">
+              <operator activated="true" class="generate_macro" compatibility="9.5.001" expanded="true" height="82" name="Generate ID Macro" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                <list key="function_descriptions">
+                  <parameter key="id_gen" value="if(%{id}==&quot;&quot; || lower(%{id})==&quot;null&quot; || lower(%{id}) == &quot;unknown&quot; || %{id}==&quot;?&quot;,&quot;?&quot;, %{id})"/>
+                </list>
+              </operator>
+              <connect from_port="condition" to_op="Generate ID Macro" to_port="through 1"/>
+              <connect from_op="Generate ID Macro" from_port="through 1" to_port="input 1"/>
+              <portSpacing port="source_condition" spacing="0"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="sink_input 1" spacing="0"/>
+              <portSpacing port="sink_input 2" spacing="0"/>
+            </process>
+            <process expanded="true">
+              <operator activated="true" class="generate_macro" compatibility="9.5.001" expanded="true" height="82" name="Generate Empty ID Macro" origin="GENERATED_MODELOPS" width="90" x="112" y="34">
+                <list key="function_descriptions">
+                  <parameter key="id_gen" value="&quot;?&quot;"/>
+                </list>
+              </operator>
+              <connect from_port="condition" to_op="Generate Empty ID Macro" to_port="through 1"/>
+              <connect from_op="Generate Empty ID Macro" from_port="through 1" to_port="input 1"/>
+              <portSpacing port="source_condition" spacing="0"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="sink_input 1" spacing="0"/>
+              <portSpacing port="sink_input 2" spacing="0"/>
+            </process>
+          </operator>
+          <operator activated="true" class="branch" compatibility="9.5.001" expanded="true" height="82" name="Check Actual" origin="GENERATED_MODELOPS" width="90" x="179" y="34">
+            <parameter key="condition_type" value="macro_defined"/>
+            <parameter key="condition_value" value="actual"/>
+            <parameter key="expression" value=""/>
+            <parameter key="io_object" value="ANOVAMatrix"/>
+            <parameter key="return_inner_output" value="true"/>
+            <process expanded="true">
+              <operator activated="true" class="generate_macro" compatibility="9.5.001" expanded="true" height="82" name="Generate Actual Macro" origin="GENERATED_MODELOPS" width="90" x="45" y="34">
+                <list key="function_descriptions">
+                  <parameter key="actual_gen" value="if(%{actual}==&quot;&quot; || lower(%{actual})==&quot;null&quot; || lower(%{actual}) == &quot;unknown&quot; || %{actual}==&quot;?&quot;,&quot;?&quot;, %{actual})"/>
+                </list>
+              </operator>
+              <connect from_port="condition" to_op="Generate Actual Macro" to_port="through 1"/>
+              <connect from_op="Generate Actual Macro" from_port="through 1" to_port="input 1"/>
+              <portSpacing port="source_condition" spacing="0"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="sink_input 1" spacing="0"/>
+              <portSpacing port="sink_input 2" spacing="0"/>
+            </process>
+            <process expanded="true">
+              <operator activated="true" class="generate_macro" compatibility="9.5.001" expanded="true" height="82" name="Generate Empty Actual Macro" origin="GENERATED_MODELOPS" width="90" x="112" y="34">
+                <list key="function_descriptions">
+                  <parameter key="actual_gen" value="&quot;?&quot;"/>
+                </list>
+              </operator>
+              <connect from_port="condition" to_op="Generate Empty Actual Macro" to_port="through 1"/>
+              <connect from_op="Generate Empty Actual Macro" from_port="through 1" to_port="input 1"/>
+              <portSpacing port="source_condition" spacing="0"/>
+              <portSpacing port="source_input 1" spacing="0"/>
+              <portSpacing port="sink_input 1" spacing="0"/>
+              <portSpacing port="sink_input 2" spacing="0"/>
+            </process>
+          </operator>
+          <operator activated="true" class="generate_attributes" compatibility="9.5.001" expanded="true" height="82" name="Generate ID and Label Columns" origin="GENERATED_MODELOPS" width="90" x="313" y="34">
+            <list key="function_descriptions">
+              <parameter key="IdGen" value="if(%{id_gen} == &quot;?&quot;, MISSING_NOMINAL, %{id_gen})"/>
+              <parameter key="ActualGen" value="if(%{actual_gen} == &quot;?&quot;, MISSING_NOMINAL, %{actual_gen})"/>
+            </list>
+            <parameter key="keep_all" value="true"/>
+            <description align="center" color="transparent" colored="false" width="126">Generate two additional columns for ID and label.</description>
+          </operator>
+          <operator activated="true" class="set_role" compatibility="9.5.001" expanded="true" height="82" name="Set ID Role" origin="GENERATED_MODELOPS" width="90" x="447" y="34">
+            <parameter key="attribute_name" value="IdGen"/>
+            <parameter key="target_role" value="id"/>
+            <list key="set_additional_roles"/>
+            <description align="center" color="transparent" colored="false" width="126">Change role of ID.</description>
+          </operator>
+          <operator activated="true" class="set_role" compatibility="9.5.001" expanded="true" height="82" name="Set Label Role" origin="GENERATED_MODELOPS" width="90" x="581" y="34">
+            <parameter key="attribute_name" value="ActualGen"/>
+            <parameter key="target_role" value="label"/>
+            <list key="set_additional_roles"/>
+            <description align="center" color="transparent" colored="false" width="126">Change role of label.</description>
+          </operator>
+          <connect from_port="in 1" to_op="Check ID" to_port="condition"/>
+          <connect from_op="Check ID" from_port="input 1" to_op="Check Actual" to_port="condition"/>
+          <connect from_op="Check Actual" from_port="input 1" to_op="Generate ID and Label Columns" to_port="example set input"/>
+          <connect from_op="Generate ID and Label Columns" from_port="example set output" to_op="Set ID Role" to_port="example set input"/>
+          <connect from_op="Set ID Role" from_port="example set output" to_op="Set Label Role" to_port="example set input"/>
+          <connect from_op="Set Label Role" from_port="example set output" to_port="out 1"/>
+          <portSpacing port="source_in 1" spacing="0"/>
+          <portSpacing port="source_in 2" spacing="0"/>
+          <portSpacing port="sink_out 1" spacing="0"/>
+          <portSpacing port="sink_out 2" spacing="0"/>
+        </process>
+        <description align="center" color="transparent" colored="false" width="126">Generates additional columns for ID and label and uses the values from the process context if defined there.</description>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.5.001" expanded="true" height="68" name="Load Known Values" origin="GENERATED_MODELOPS" width="90" x="648" y="34">
+        <parameter key="repository_entry" value="Known Values"/>
+        <description align="center" color="transparent" colored="false" width="126">Load known values.</description>
+      </operator>
+      <operator activated="true" class="apply_model" compatibility="9.5.001" expanded="true" height="82" name="Apply Known Values" origin="GENERATED_MODELOPS" width="90" x="849" y="289">
+        <list key="application_parameters"/>
+        <parameter key="create_view" value="false"/>
+        <description align="center" color="transparent" colored="false" width="126">Replace all unknown categorical values by missing values.</description>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.5.001" expanded="true" height="68" name="Load Missing Value Handling" origin="GENERATED_MODELOPS" width="90" x="849" y="34">
+        <parameter key="repository_entry" value="Missing Processing"/>
+        <description align="center" color="transparent" colored="false" width="126">Load the processing of missing values.</description>
+      </operator>
+      <operator activated="true" class="apply_model" compatibility="9.5.001" expanded="true" height="82" name="Missing Processing" origin="GENERATED_MODELOPS" width="90" x="1050" y="289">
+        <list key="application_parameters"/>
+        <parameter key="create_view" value="false"/>
+        <description align="center" color="transparent" colored="false" width="126">Missing processing on scoring data.</description>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.5.001" expanded="true" height="68" name="Load Encoding" origin="GENERATED_MODELOPS" width="90" x="1050" y="34">
+        <parameter key="repository_entry" value="Encoding Processing"/>
+        <description align="center" color="transparent" colored="false" width="126">Recall nominal value handling and encoding processing.</description>
+      </operator>
+      <operator activated="true" class="apply_model" compatibility="9.5.001" expanded="true" height="82" name="Apply Encoding" origin="GENERATED_MODELOPS" width="90" x="1251" y="289">
+        <list key="application_parameters"/>
+        <parameter key="create_view" value="false"/>
+        <description align="center" color="transparent" colored="false" width="126">Remove nominal columns with too many values and perform one-hot encoding if desired.</description>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.5.001" expanded="true" height="68" name="Load Text Model" origin="GENERATED_MODELOPS" width="90" x="1251" y="34">
+        <parameter key="repository_entry" value="Text Processing"/>
+        <description align="center" color="transparent" colored="false" width="126">Load text model so that we generate the same text-based columns as for the training data.</description>
+      </operator>
+      <operator activated="true" class="apply_model" compatibility="9.5.001" expanded="true" height="82" name="Apply Text Vectorization" origin="GENERATED_MODELOPS" width="90" x="1452" y="289">
+        <list key="application_parameters"/>
+        <parameter key="create_view" value="false"/>
+        <description align="center" color="transparent" colored="false" width="126">Apply text vectorization (if applicable) on scoring set.</description>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.5.001" expanded="true" height="68" name="Load Feature Set" origin="GENERATED_MODELOPS" width="90" x="1452" y="493">
+        <parameter key="repository_entry" value="Optimal Feature Set"/>
+        <description align="center" color="transparent" colored="false" width="126">Load feature set so that we generate the same feature set as for the training data.</description>
+      </operator>
+      <operator activated="true" class="model_simulator:apply_feature_set" compatibility="9.5.000" expanded="true" height="82" name="Apply Feature Set" origin="GENERATED_MODELOPS" width="90" x="1653" y="391">
+        <parameter key="handle missings" value="true"/>
+        <parameter key="keep originals" value="true"/>
+        <parameter key="originals special role" value="true"/>
+        <parameter key="recreate missing attributes" value="true"/>
+        <description align="center" color="transparent" colored="false" width="126">Apply resulting feature set on scoring data.</description>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.5.001" expanded="true" height="68" name="Load Model" origin="GENERATED_MODELOPS" width="90" x="1653" y="34">
+        <parameter key="repository_entry" value="Production Model"/>
+        <description align="center" color="transparent" colored="false" width="126">Load the predictive model.</description>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.5.001" expanded="true" height="68" name="Load Statistics" origin="GENERATED_MODELOPS" width="90" x="1653" y="187">
+        <parameter key="repository_entry" value="Production Statistics"/>
+        <description align="center" color="transparent" colored="false" width="126">Load statistics for the training data which is needed for creating the explanations.</description>
+      </operator>
+      <operator activated="true" class="model_simulator:explain_predictions" compatibility="9.5.000" expanded="true" height="124" name="Explain Predictions" origin="GENERATED_MODELOPS" width="90" x="1854" y="187">
+        <parameter key="maximal explaining attributes" value="3"/>
+        <parameter key="local sample size" value="150"/>
+        <parameter key="only create predictions" value="true"/>
+        <parameter key="normalize global weights" value="false"/>
+        <parameter key="sort_weights" value="true"/>
+        <parameter key="sort_direction" value="descending"/>
+        <description align="center" color="transparent" colored="false" width="126">Create predictions for cases without value and add explanations for predictions.</description>
+      </operator>
+      <operator activated="true" class="subprocess" compatibility="9.5.001" expanded="true" height="82" name="Logging" origin="GENERATED_MODELOPS" width="90" x="1988" y="187">
+        <process expanded="true">
+          <operator activated="true" class="model_deployment_management:mdm_logging" compatibility="9.5.000" expanded="true" name="Deployment Logging">
+            <parameter key="connection location" value="/Connections/monitoring_db"/>
+            <parameter key="deployment id" value="d96044ee-cb7f-468e-8d1c-6f1a02769872"/>
+            <parameter key="logging mode" value="full logging"/>
+            <parameter key="model id" value="92ecb9b0-1a13-4646-ad6b-3ed9a380d7df"/>
+            <parameter key="model state" value="%{model_state}"/>
+            <parameter key="scoring time provider" value="Explain Predictions"/>
+            <parameter key="scoring time value" value="execution-time"/>
+            <parameter key="normalize scoring time" value="false"/>
+          </operator>
+          <connect from_port="in 1" to_op="Deployment Logging" to_port="example set"/>
+          <connect from_op="Deployment Logging" from_port="example set" to_port="out 1"/>
+          <portSpacing port="source_in 1" spacing="0"/>
+          <portSpacing port="source_in 2" spacing="0"/>
+          <portSpacing port="sink_out 1" spacing="0"/>
+          <portSpacing port="sink_out 2" spacing="0"/>
+        </process>
+        <description align="center" color="transparent" colored="false" width="126">If monitoring has been activated, the logging will happen inside of this subprocess.</description>
+      </operator>
+      <connect from_op="Load Single Row Original" from_port="output" to_op="Set Values from Context" to_port="in 1"/>
+      <connect from_op="Set Values from Context" from_port="out 1" to_op="Preprocessing" to_port="in 1"/>
+      <connect from_op="Preprocessing" from_port="out 1" to_op="Add Label and ID" to_port="in 1"/>
+      <connect from_op="Add Label and ID" from_port="out 1" to_op="Apply Known Values" to_port="unlabelled data"/>
+      <connect from_op="Load Known Values" from_port="output" to_op="Apply Known Values" to_port="model"/>
+      <connect from_op="Apply Known Values" from_port="labelled data" to_op="Missing Processing" to_port="unlabelled data"/>
+      <connect from_op="Load Missing Value Handling" from_port="output" to_op="Missing Processing" to_port="model"/>
+      <connect from_op="Missing Processing" from_port="labelled data" to_op="Apply Encoding" to_port="unlabelled data"/>
+      <connect from_op="Load Encoding" from_port="output" to_op="Apply Encoding" to_port="model"/>
+      <connect from_op="Apply Encoding" from_port="labelled data" to_op="Apply Text Vectorization" to_port="unlabelled data"/>
+      <connect from_op="Load Text Model" from_port="output" to_op="Apply Text Vectorization" to_port="model"/>
+      <connect from_op="Apply Text Vectorization" from_port="labelled data" to_op="Apply Feature Set" to_port="example set"/>
+      <connect from_op="Load Feature Set" from_port="output" to_op="Apply Feature Set" to_port="feature set"/>
+      <connect from_op="Apply Feature Set" from_port="example set" to_op="Explain Predictions" to_port="test data"/>
+      <connect from_op="Load Model" from_port="output" to_op="Explain Predictions" to_port="model"/>
+      <connect from_op="Load Statistics" from_port="output" to_op="Explain Predictions" to_port="training data"/>
+      <connect from_op="Explain Predictions" from_port="example set output" to_op="Logging" to_port="in 1"/>
+      <connect from_op="Logging" from_port="out 1" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="252"/>
+      <portSpacing port="sink_result 1" spacing="147"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+    </process>
+  </operator>
+</process>

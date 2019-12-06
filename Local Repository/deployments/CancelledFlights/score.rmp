@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.5.001">
+  <context>
+    <input/>
+    <output/>
+    <macros>
+      <macro>
+        <key>id</key>
+        <value/>
+      </macro>
+      <macro>
+        <key>actual</key>
+        <value/>
+      </macro>
+      <macro>
+        <key>cancelled</key>
+        <value>0.0022359752445597924</value>
+      </macro>
+      <macro>
+        <key>distancegc</key>
+        <value>1082.4757177850004</value>
+      </macro>
+      <macro>
+        <key>flightnumber</key>
+        <value>4225.152297243308</value>
+      </macro>
+      <macro>
+        <key>opflightnumber</key>
+        <value>1922.2742871149603</value>
+      </macro>
+      <macro>
+        <key>regflightnumber</key>
+        <value>4436.296424090338</value>
+      </macro>
+      <macro>
+        <key>aircrafttype</key>
+        <value>320</value>
+      </macro>
+      <macro>
+        <key>airlinecode</key>
+        <value>AF</value>
+      </macro>
+      <macro>
+        <key>altarrapt</key>
+        <value>?</value>
+      </macro>
+      <macro>
+        <key>altdepapt</key>
+        <value>?</value>
+      </macro>
+      <macro>
+        <key>arrcountrycode</key>
+        <value>DE</value>
+      </macro>
+      <macro>
+        <key>depcountrycode</key>
+        <value>DE</value>
+      </macro>
+      <macro>
+        <key>diversionstatus</key>
+        <value>D</value>
+      </macro>
+      <macro>
+        <key>flightid</key>
+        <value>UX1322DKRMAD1401010030</value>
+      </macro>
+      <macro>
+        <key>inairaccuracy</key>
+        <value>A</value>
+      </macro>
+      <macro>
+        <key>inairlocal</key>
+        <value>2014-01-01 17:30:00.0</value>
+      </macro>
+      <macro>
+        <key>inairutc</key>
+        <value>2014-01-01 12:23:00.0</value>
+      </macro>
+      <macro>
+        <key>ingateaccuracy</key>
+        <value>A</value>
+      </macro>
+      <macro>
+        <key>landedaccuracy</key>
+        <value>A</value>
+      </macro>
+      <macro>
+        <key>landedlocal</key>
+        <value>2014-01-01 13:45:00.0</value>
+      </macro>
+      <macro>
+        <key>landedutc</key>
+        <value>2014-01-01 17:17:00.0</value>
+      </macro>
+      <macro>
+        <key>opairlinecode</key>
+        <value>LH</value>
+      </macro>
+      <macro>
+        <key>outgateaccuracy</key>
+        <value>A</value>
+      </macro>
+      <macro>
+        <key>outgatelocal</key>
+        <value>2014-01-01 17:00:00.0</value>
+      </macro>
+      <macro>
+        <key>outgateutc</key>
+        <value>2014-01-01 13:35:00.0</value>
+      </macro>
+      <macro>
+        <key>recovflightid</key>
+        <value>?</value>
+      </macro>
+      <macro>
+        <key>regairlinecode</key>
+        <value>CL</value>
+      </macro>
+      <macro>
+        <key>schedarrapt</key>
+        <value>CDG</value>
+      </macro>
+      <macro>
+        <key>scheddepapt</key>
+        <value>CDG</value>
+      </macro>
+      <macro>
+        <key>ingatelocal</key>
+        <value>2014-01-01 05:28:00 GMT</value>
+      </macro>
+      <macro>
+        <key>ingateutc</key>
+        <value>2014-01-01 03:35:00 GMT</value>
+      </macro>
+      <macro>
+        <key>schedarrlocal</key>
+        <value>2014-01-01 02:40:00 GMT</value>
+      </macro>
+      <macro>
+        <key>schedarrutc</key>
+        <value>2014-01-01 02:40:00 GMT</value>
+      </macro>
+      <macro>
+        <key>scheddeplocal</key>
+        <value>2013-12-31 16:00:00 GMT</value>
+      </macro>
+      <macro>
+        <key>scheddeputc</key>
+        <value>2014-01-01 00:00:00 GMT</value>
+      </macro>
+    </macros>
+  </context>
+  <operator activated="true" class="process" compatibility="9.5.001" expanded="true" name="Process" origin="GENERATED_MODELOPS">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="utility:create_exampleset" compatibility="9.5.001" expanded="true" name="Create ExampleSet">
+        <parameter key="generator_type" value="comma separated text"/>
+        <parameter key="number_of_examples" value="100"/>
+        <parameter key="use_stepsize" value="false"/>
+        <list key="function_descriptions"/>
+        <parameter key="add_id_attribute" value="false"/>
+        <list key="numeric_series_configuration"/>
+        <list key="date_series_configuration"/>
+        <list key="date_series_configuration (interval)"/>
+        <parameter key="date_format" value="yyyy-MM-dd HH:mm:ss"/>
+        <parameter key="time_zone" value="SYSTEM"/>
+        <parameter key="input_csv_text" value="error&#10;deployment is not active"/>
+        <parameter key="column_separator" value=","/>
+        <parameter key="parse_all_as_nominal" value="false"/>
+        <parameter key="decimal_point_character" value="."/>
+        <parameter key="trim_attribute_names" value="true"/>
+      </operator>
+      <connect from_op="Create ExampleSet" from_port="output" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+    </process>
+  </operator>
+</process>
